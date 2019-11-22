@@ -116,8 +116,8 @@ CREATE TABLE CATEGORY (
  );
  
 CREATE TABLE MEDICINE_CATEGORY (
-    category_id int NOT NULL REFERENCES CATEGORY(category_id) AUTO_INCREMENT,
-    medicine_id int NOT NULL REFERENCES MEDICINE(medicine_id) AUTO_INCREMENT,
+    category_id int NOT NULL REFERENCES CATEGORY(category_id),
+    medicine_id int NOT NULL REFERENCES MEDICINE(medicine_id),
     PRIMARY KEY (category_id, medicine_id)
  );
 
