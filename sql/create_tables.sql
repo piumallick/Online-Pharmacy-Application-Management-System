@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS STAFF(
 
  ALTER TABLE STAFF AUTO_INCREMENT = 200;
 
- CREATE TABLE MEDICINE (
+ CREATE TABLE IF NOT EXISTS MEDICINE (
    medicine_id int NOT NULL AUTO_INCREMENT,
    medicine_name varchar (255) NOT NULL,
    medicine_desc varchar (255) NOT NULL,
@@ -54,7 +54,7 @@ CREATE TABLE IF NOT EXISTS STAFF(
  ALTER TABLE MEDICINE AUTO_INCREMENT = 1000;
 
 
- CREATE TABLE CATEGORY (
+ CREATE TABLE IF NOT EXISTS CATEGORY (
    category_id int NOT NULL AUTO_INCREMENT,
    category_name varchar (20) NOT NULL,
    lower_age varchar (10) NOT NULL,
@@ -62,11 +62,17 @@ CREATE TABLE IF NOT EXISTS STAFF(
    gender varchar (2) NOT NULL,
    PRIMARY KEY (category_id)
   );
+  
+  ALTER TABLE CATEGORY AUTO_INCREMENT = 2000;
 
- CREATE TABLE MEDICINE_CATEGORY (
-     category_id int NOT NULL REFERENCES CATEGORY(category_id) ,
+ CREATE TABLE IF NOT EXISTS MEDICINE_CATEGORY (
+     category_id int NOT NULL,
      medicine_id int NOT NULL REFERENCES MEDICINE(medicine_id),
-     PRIMARY KEY (category_id, medicine_id)
+     PRIMARY KEY (category_id, medicine_id),
+     CONSTRAINT Category_details FOREIGN KEY
+                (category_id) REFERENCES CATEGORY(category_id),
+     CONSTRAINT Medicine_details FOREIGN KEY
+                (medicine_id) REFERENCES MEDICINE(medicine_id)
   );
 
 CREATE TABLE SUPPLIER (
@@ -78,20 +84,26 @@ CREATE TABLE SUPPLIER (
   PRIMARY KEY (supplier_id)
 );
 
+ALTER TABLE SUPPLIER AUTO_INCREMENT = 3000;
+
 CREATE TABLE STOCK (
   stock_id int NOT NULL AUTO_INCREMENT,
   supply_date date NOT NULL,
   tax_pct float NOT NULL,
   total_cost float (20) NOT NULL,
-  supplier_id varchar (20) NOT NULL REFERENCES SUPPLIER (supplier_id),
-  PRIMARY KEY (stock_id)
+  supplier_id int NOT NULL, 
+  PRIMARY KEY (stock_id),
+  CONSTRAINT Supplier_Stock_Details FOREIGN KEY
+    (supplier_id) REFERENCES SUPPLIER (supplier_id)
 );
+
+ALTER TABLE STOCK AUTO_INCREMENT = 4000;
 
 CREATE TABLE HAS_STOCK_SUPPLY(
     stock_id INT NOT NULL,
     supplier_id INT NOT NULL,
-    unit_cost_price VARCHAR(20) NOT NULL,
-    medicine_id VARCHAR(20) NOT NULL,
+    unit_cost_price FLOAT NOT NULL,
+    medicine_id INT NOT NULL,
     manufacture_date DATE NOT NULL,
     expiry_date DATE NOT NULL,
     quantity INT(20) NOT NULL,
@@ -99,7 +111,13 @@ CREATE TABLE HAS_STOCK_SUPPLY(
         stock_id,
         supplier_id,
         medicine_id
-    )
+    ),
+    CONSTRAINT Stock_Details FOREIGN KEY
+    (stock_id) REFERENCES STOCK (stock_id),
+    CONSTRAINT Supplier_Details FOREIGN KEY
+    (supplier_id) REFERENCES SUPPLIER (supplier_id),
+    CONSTRAINT Med_details FOREIGN KEY
+                (medicine_id) REFERENCES MEDICINE(medicine_id)
 );
 
 CREATE TABLE HAS_STORE_STOCK (
@@ -107,7 +125,13 @@ CREATE TABLE HAS_STORE_STOCK (
   stock_id int NOT NULL,
   medicine_id int NOT NULL,
   availability_of_medicine varchar (4) NOT NULL,
-  PRIMARY KEY (stock_id,store_id,medicine_id)
+  PRIMARY KEY (stock_id,store_id,medicine_id),
+    CONSTRAINT Store_Stock_Detail FOREIGN KEY
+    (stock_id) REFERENCES STOCK (stock_id),
+    CONSTRAINT Store_St_Detail FOREIGN KEY
+    (store_id) REFERENCES STORE (store_id),
+    CONSTRAINT Medicine_St_Detail FOREIGN KEY
+                (medicine_id) REFERENCES MEDICINE(medicine_id)
 );
 
 CREATE TABLE ORDERS(
@@ -115,10 +139,16 @@ CREATE TABLE ORDERS(
   total_amt int(20) NOT NULL,
   order_date date NOT NULL,
   tax_pct float NOT NULL,
-  cust_id int NOT NULL REFERENCES CUSTOMER(cust_id),
-  store_id int NOT NULL REFERENCES STORE(store_id),
-  PRIMARY KEY (order_id)
+  cust_id int NOT NULL, 
+  store_id int NOT NULL,
+  PRIMARY KEY (order_id),
+  CONSTRAINT Cust_Orders FOREIGN KEY
+    (cust_id) REFERENCES CUSTOMERS (cust_id),
+    CONSTRAINT Store_Cust_Orders FOREIGN KEY
+    (store_id) REFERENCES STORE (store_id)
  );
+ 
+ ALTER TABLE ORDERS AUTO_INCREMENT = 5000;
 
 CREATE TABLE ORDER_ITEMS (
   order_id int NOT NULL REFERENCES ORDERS(order_id),
