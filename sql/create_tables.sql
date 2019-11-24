@@ -57,7 +57,6 @@ CREATE TABLE IF NOT EXISTS STAFF(
    medicine_id int NOT NULL AUTO_INCREMENT,
    medicine_name varchar (255) NOT NULL,
    medicine_desc varchar (255) NOT NULL,
-   unit_selling_price float NOT NULL,
    PRIMARY KEY (medicine_id)
  );
 
@@ -73,7 +72,7 @@ CREATE TABLE IF NOT EXISTS STAFF(
    gender varchar (2) NOT NULL,
    PRIMARY KEY (category_id)
   );
-  
+
 /* ALTER TABLE SCRIPT FOR AUTO_INCREMENT ON PRIMARY KEY */
 ALTER TABLE CATEGORY AUTO_INCREMENT = 2000;
 
@@ -107,7 +106,7 @@ CREATE TABLE IF NOT EXISTS STOCK (
   supply_date date NOT NULL,
   tax_pct float NOT NULL,
   total_cost float (20) NOT NULL,
-  supplier_id int NOT NULL, 
+  supplier_id int NOT NULL,
   PRIMARY KEY (stock_id),
   CONSTRAINT Supplier_Stock_Details FOREIGN KEY
     (supplier_id) REFERENCES SUPPLIER (supplier_id)
@@ -159,7 +158,7 @@ CREATE TABLE IF NOT EXISTS ORDERS(
   total_amt int(20) NOT NULL,
   order_date date NOT NULL,
   tax_pct float NOT NULL,
-  cust_id int NOT NULL, 
+  cust_id int NOT NULL,
   store_id int NOT NULL,
   PRIMARY KEY (order_id),
   CONSTRAINT Cust_Orders FOREIGN KEY
@@ -167,7 +166,7 @@ CREATE TABLE IF NOT EXISTS ORDERS(
     CONSTRAINT Store_Cust_Orders FOREIGN KEY
     (store_id) REFERENCES STORE (store_id)
  );
- 
+
  /* ALTER TABLE SCRIPT FOR AUTO_INCREMENT ON PRIMARY KEY */
  ALTER TABLE ORDERS AUTO_INCREMENT = 5000;
 

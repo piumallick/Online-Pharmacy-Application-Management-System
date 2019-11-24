@@ -1,111 +1,111 @@
-MEDICINE_ID,MEDICINE_NAME,MEDICINE DESC,UNIT_SELLING_PRICE
-1001,Ibuprofen 200 mg,Pain/Fever Reliever,4.25
-1002,Acetaminophen 325mg,Pain/Fever Reliever,3
-1003,Pediatric Acetaminophen 2.6g,Pain/Fever Reliever,4
-1004,Naxproxen 200mg,Pain/Fever Reliever,2.5
-1005,Aspirin 81 mg EC,Pain/Fever Reliever,2.5
-1006,Aspirin 325 mg ,Pain/Fever Reliever,2.5
-1007,Asprin for Kids,Pain/Fever Reliever,2.5
-1008,Bengay Cream 2 oz,Ultra Strength Pain Relieving cream,4.5
-1009,Tiger Balm 2 oz,Pain Relieving Ointment,4.55
-1010,Tiger Balm Patch 2 oz,Pain Relieving Patch,5
-1011,Diphenhydramine 25g,Allergy Relief,2
-1012,Loratidine 10mg,Hayfever and Allergy Relief,5
-1013,Loratadine D,Congestion Allergy Relief,8
-1014,Cetirzine 10 mg ,Allergy Relief,4
-1015,Psuefoephedrine 30 mg,Nasal Decongestant,2
-1016,Psuefoephedrine 12HR,12 hr Nasal Decongestant,5
-1017,Oxymetazoline Nasal Spray,Nasal Spray for sinus,3
-1018,Saline Nasal Spray,Natural Nasal Spray,2.5
-1019,Fexofendanine / antihistamine 30mg,Allergy Relief fror Kids,4
-1020,AZO,Uninary Pain Relief,8.5
-1021,Clotrimazole Vaginal 7 day,Antifungal Vaginal Cream,5
-1022,Miconazole Vaginal 7 day,Antifungal Ointment,7
-1023,Clotrimazole Vaginal 3 day,Antifungal Cream,6.5
-1024,Midol ,Menstral Pain Relief System,6
-1025,Tampax Super,Tampons Super Flow,2.55
-1026,Tampax Pearl,Tampons Regular Flow,2.5
-1027,Preganacy test,Preganacy test,6
-1028,Advil Cold & Sinus,Sinus Congestion & pain,10.5
-1029,Dexamethorphan 3 oz,Cough Relief,8
-1030,Generiz Robitussin 8 oz,Cough and Chest Congestion,3.5
-1031,Generiz Robitussin DM 4 oz,Cough and Chest Congestion,3.5
-1032,Mucinex,Chest Congestion Expectorant ,14
-1033,Generic Mucinex DM,Expectorant & Cough Supression,10
-1034,Generic Mucinex D,Expectorant,9.5
-1035,Cough Drops,Sore Throat and Cough,1.5
-1036,Sore Throat Lozenges,Sore Throat and Cough,3
-1037,Chloraseptic Spray,Sore Throat Spray,3
-1038,Generic NyQuil Cap,Nighttime Multi-symptom cold & flu,5
-1039,Generic DayQuil Cap,Daytime Multi-symptom cold & flu,3.5
-1040,Mucinex for Kids,Expectorant & Cough Supression,15.5
-1041,Probiotic Blend,Friendly Bacteria for Disgestive Health,7.5
-1042,Culturelle for Kids,Probiotics Disgestive Health,18.5
-1043,Lactase Supplement,Diary Digestive aid ,8
-1044,Chewable Antacid,Heartburn Reliever,3
-1045,Chewable Bismuth,Stomach Relief,3.29
-1046,Gas Relief 80mg,Relieves from Gastric Symptoms,2.5
-1047,Famotidine 20mg,Acid Reducer,7.5
-1048,Ranitidine I 50mg,Treatment of Gastric Hyperactivity,5
-1049,Omeprazole 20mg,Acid Reducer,10
-1050,Loperamide 2mg,Anti- Diarrheal,3
-1051,Bisacodyl Laxative,"Gentle, Predictive, Overnight Relief",2.5
-1052,Docusate Stool Softener,Constipation Relief,2.5
-1053,Generic Miralax Laxative,Constipation Relief,15.5
-1054,Senna 8.6mg,Natural Vegetable Constipation Relief,4
-1055,CereVe Lotion ,Facial Oil-free moisturizer ,12
-1056,Petroleum Jelly 3.75 oz ,Skin protecting Jelly,2
-1057,Hydrocortisone 1% Cream ,Used to treat a variety of skin conditions.,2.5
-1058,Clotrimazole 1% Cream ,Used to treat a variety of skin conditions.,5
-1059,Terbinafine 1% Cream ,Antifungal Cream,7.5
-1060,Triple Antibiotic Ointment,Used to prevent and treat minor skin infections,5
-1061,Benzoyl Peroxide 5% Wash ,Used for treatment of Acne,12
-1062,Benzoyl Peroxide 10% Wash ,Used for treatment of Acne,12.5
-1063,SPF 30 Sunscreen Spray ,Sun protection from UV rays,6
-1064,CereVe Baby Lotion ,Moisturizer for baby,12
-1065,Toothbrush,Detnal health,0.85
-1066,Secret Deodorant,Antiperspirant,2
-1067,Toothpaste,Dental Health,2.25
-1068,Right Guard Deodorant,Fragrance,3.15
-1069,Dental Floss,Dental Health,1.5
-1070,Anti - Dandruff Shampoo,Hair Care,17.5
-1071,Mouth Wash 500 ml,Dental Health,3
-1072,Suave 2 in 1 Shampoo,Hair Care,3
-1073,Hand Sanitizer 12 oz,Hygiene,3.25
-1074,Bar Soap,Hygiene,3
-1075,Band Aids Assorted,Band-aid for cuts and wounds,3
-1076,Hydrogen Peroxide 3 %,Antiseptic Solution,1
-1077,Gummy Multivitamin x 70,Complete Multivitamin for adults,6
-1078,Daily Multivitamins Assorted,Complete Multivitamin for adults,5
-1079,PreNatal Vitamins x 100,Multivitamin for Women during and after pregnancy,5.5
-1080,Biotin 5000mcg x 110,"B-complex vitamin for normal metabolism of carbs, protein & fats",4.5
-1081,Vitamin B1 100mcg x 100,Essential Vitamin,7
-1082,Vitamin B6 100mg x 100,Essential Vitamin,6
-1083,Vitamin B12 1000mcg x 50,Essential Vitamin,5.5
-1084,Vitamin B12 2500mcg x 110,Essential Vitamin,5.75
-1085,Vitamin C 500mg x 100,Essential Vitamin,4.5
-1086,Vitamin D 400iu x 100,Essential Vitamin,6
-1087,Vitamin D 1000iu x 100,Essential Vitamin,3.5
-1088,Vitamin D 2000iu x 100,Essential Vitamin,8.75
-1089,Vitamin E 400iu x 100,Essential Vitamin,3.1
-1090,Calcium Citrate 400mg x 100 ,Calcium Tablet,7
-1091,Calcium Cit 630mg + D x 120 ,Calcium Tablet,8
-1092,CoQ10 200mg x 30,Essential Vitamin,8
-1093,Fish Oil 1200tng x 100,Omega 3 Vitamin,2.5
-1094,Folic Acid 400mcg x 100,B Complex Tablet,4.38
-1095,Folic Acid 1mg x 100,B Complex Tablet,2.5
-1096,Ferrous Sulfate 325mg x 100,Iron Supplement Tablet,3
-1097,Slow Fe 45mg x 30,Iron Supplement Tablet,3
-1098,Ferrous Gluconate 27mg x 100 ,Iron Supplement Tablet,4
-1099,Zinc 50mg x 100,Zinc Supplement Tablet,4
-1100,Magnesium 400mg x 60,Magnesium Supplement Tablet,10
-1101,Glucosamine 1000mg x 120,Nutritional support for joints,6.64
-1102,Glucosamine/Chondroitin x 60 ,Nutritional support for joints,6
-1103,Melatonin 5mg x 120,Melatonin Supplement Tablet,6
-1104,Men's Healthy Testorsterone ,Testorsterone & Sexual Support,12.2
-1105,Protein Powder For Female,Protien Dietery Supplement,14.2
-1106,Protein Powder For Men,Protien Dietery Supplement,12
-1107,Benzocaine 75% Gel,Male Desensatizing Ejaculatory Control Gel,15
-1108,Shaving Gel ,Shaving Gel ,8
-1109,After Shave Lotion,100% Alcohol After Shave,6
-1110,Women's supplements,Essential Vitamin for Woman's Health,9
+MEDICINE_ID,MEDICINE_NAME,MEDICINE DESC
+1001,Ibuprofen 200 mg,Pain/Fever Reliever
+1002,Acetaminophen 325mg,Pain/Fever Reliever
+1003,Pediatric Acetaminophen 2.6g,Pain/Fever Reliever
+1004,Naxproxen 200mg,Pain/Fever Reliever
+1005,Aspirin 81 mg EC,Pain/Fever Reliever
+1006,Aspirin 325 mg ,Pain/Fever Reliever
+1007,Asprin for Kids,Pain/Fever Reliever
+1008,Bengay Cream 2 oz,Ultra Strength Pain Relieving cream
+1009,Tiger Balm 2 oz,Pain Relieving Ointment
+1010,Tiger Balm Patch 2 oz,Pain Relieving Patch
+1011,Diphenhydramine 25g,Allergy Relief
+1012,Loratidine 10mg,Hayfever and Allergy Relief
+1013,Loratadine D,Congestion Allergy Relief
+1014,Cetirzine 10 mg ,Allergy Relief
+1015,Psuefoephedrine 30 mg,Nasal Decongestant
+1016,Psuefoephedrine 12HR,12 hr Nasal Decongestant
+1017,Oxymetazoline Nasal Spray,Nasal Spray for sinus
+1018,Saline Nasal Spray,Natural Nasal Spray
+1019,Fexofendanine / antihistamine 30mg,Allergy Relief fror Kids
+1020,AZO,Uninary Pain Relief
+1021,Clotrimazole Vaginal 7 day,Antifungal Vaginal Cream
+1022,Miconazole Vaginal 7 day,Antifungal Ointment
+1023,Clotrimazole Vaginal 3 day,Antifungal Cream
+1024,Midol ,Menstral Pain Relief System
+1025,Tampax Super,Tampons Super Flow
+1026,Tampax Pearl,Tampons Regular Flow
+1027,Preganacy test,Preganacy test
+1028,Advil Cold & Sinus,Sinus Congestion & pain
+1029,Dexamethorphan 3 oz,Cough Relief
+1030,Generiz Robitussin 8 oz,Cough and Chest Congestion
+1031,Generiz Robitussin DM 4 oz,Cough and Chest Congestion
+1032,Mucinex,Chest Congestion Expectorant 
+1033,Generic Mucinex DM,Expectorant & Cough Supression
+1034,Generic Mucinex D,Expectorant
+1035,Cough Drops,Sore Throat and Cough
+1036,Sore Throat Lozenges,Sore Throat and Cough
+1037,Chloraseptic Spray,Sore Throat Spray
+1038,Generic NyQuil Cap,Nighttime Multi-symptom cold & flu
+1039,Generic DayQuil Cap,Daytime Multi-symptom cold & flu
+1040,Mucinex for Kids,Expectorant & Cough Supression
+1041,Probiotic Blend,Friendly Bacteria for Disgestive Health
+1042,Culturelle for Kids,Probiotics Disgestive Health
+1043,Lactase Supplement,Diary Digestive aid 
+1044,Chewable Antacid,Heartburn Reliever
+1045,Chewable Bismuth,Stomach Relief
+1046,Gas Relief 80mg,Relieves from Gastric Symptoms
+1047,Famotidine 20mg,Acid Reducer
+1048,Ranitidine I 50mg,Treatment of Gastric Hyperactivity
+1049,Omeprazole 20mg,Acid Reducer
+1050,Loperamide 2mg,Anti- Diarrheal
+1051,Bisacodyl Laxative,"Gentle, Predictive, Overnight Relief"
+1052,Docusate Stool Softener,Constipation Relief
+1053,Generic Miralax Laxative,Constipation Relief
+1054,Senna 8.6mg,Natural Vegetable Constipation Relief
+1055,CereVe Lotion ,Facial Oil-free moisturizer 
+1056,Petroleum Jelly 3.75 oz ,Skin protecting Jelly
+1057,Hydrocortisone 1% Cream ,Used to treat a variety of skin conditions.
+1058,Clotrimazole 1% Cream ,Used to treat a variety of skin conditions.
+1059,Terbinafine 1% Cream ,Antifungal Cream
+1060,Triple Antibiotic Ointment,Used to prevent and treat minor skin infections
+1061,Benzoyl Peroxide 5% Wash ,Used for treatment of Acne
+1062,Benzoyl Peroxide 10% Wash ,Used for treatment of Acne
+1063,SPF 30 Sunscreen Spray ,Sun protection from UV rays
+1064,CereVe Baby Lotion ,Moisturizer for baby
+1065,Toothbrush,Detnal health
+1066,Secret Deodorant,Antiperspirant
+1067,Toothpaste,Dental Health
+1068,Right Guard Deodorant,Fragrance
+1069,Dental Floss,Dental Health
+1070,Anti - Dandruff Shampoo,Hair Care
+1071,Mouth Wash 500 ml,Dental Health
+1072,Suave 2 in 1 Shampoo,Hair Care
+1073,Hand Sanitizer 12 oz,Hygiene
+1074,Bar Soap,Hygiene
+1075,Band Aids Assorted,Band-aid for cuts and wounds
+1076,Hydrogen Peroxide 3 %,Antiseptic Solution
+1077,Gummy Multivitamin x 70,Complete Multivitamin for adults
+1078,Daily Multivitamins Assorted,Complete Multivitamin for adults
+1079,PreNatal Vitamins x 100,Multivitamin for Women during and after pregnancy
+1080,Biotin 5000mcg x 110,"B-complex vitamin for normal metabolism of carbs, protein & fats"
+1081,Vitamin B1 100mcg x 100,Essential Vitamin
+1082,Vitamin B6 100mg x 100,Essential Vitamin
+1083,Vitamin B12 1000mcg x 50,Essential Vitamin
+1084,Vitamin B12 2500mcg x 110,Essential Vitamin
+1085,Vitamin C 500mg x 100,Essential Vitamin
+1086,Vitamin D 400iu x 100,Essential Vitamin
+1087,Vitamin D 1000iu x 100,Essential Vitamin
+1088,Vitamin D 2000iu x 100,Essential Vitamin
+1089,Vitamin E 400iu x 100,Essential Vitamin
+1090,Calcium Citrate 400mg x 100 ,Calcium Tablet
+1091,Calcium Cit 630mg + D x 120 ,Calcium Tablet
+1092,CoQ10 200mg x 30,Essential Vitamin
+1093,Fish Oil 1200tng x 100,Omega 3 Vitamin
+1094,Folic Acid 400mcg x 100,B Complex Tablet
+1095,Folic Acid 1mg x 100,B Complex Tablet
+1096,Ferrous Sulfate 325mg x 100,Iron Supplement Tablet
+1097,Slow Fe 45mg x 30,Iron Supplement Tablet
+1098,Ferrous Gluconate 27mg x 100 ,Iron Supplement Tablet
+1099,Zinc 50mg x 100,Zinc Supplement Tablet
+1100,Magnesium 400mg x 60,Magnesium Supplement Tablet
+1101,Glucosamine 1000mg x 120,Nutritional support for joints
+1102,Glucosamine/Chondroitin x 60 ,Nutritional support for joints
+1103,Melatonin 5mg x 120,Melatonin Supplement Tablet
+1104,Men's Healthy Testorsterone ,Testorsterone & Sexual Support
+1105,Protein Powder For Female,Protien Dietery Supplement
+1106,Protein Powder For Men,Protien Dietery Supplement
+1107,Benzocaine 75% Gel,Male Desensatizing Ejaculatory Control Gel
+1108,Shaving Gel ,Shaving Gel 
+1109,After Shave Lotion,100% Alcohol After Shave
+1110,Women's supplements,Essential Vitamin for Woman's Health
