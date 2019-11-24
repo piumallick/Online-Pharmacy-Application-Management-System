@@ -1,0 +1,11 @@
+CATEGORY_ID,CATEGORY_NAME,LOWER_AGE,UPPER_AGE,GENDER
+2001,Pain/Fever,16,100,A
+2002,Cold/ Cough ,16,100,A
+2003,Digestive Health,16,100,A
+2004,Feminine Health,16,100,F
+2005,Skin Care,16,100,A
+2006,Supplements,16,100,A
+2007,Hygiene/Other,16,100,A
+2008,Men's Health,16,100,M
+2009,Kids,3,15,A
+2010,Allergy/Congestion,16,100,A
