@@ -33,7 +33,7 @@ CREATE INDEX idx_cust ON CUSTOMERS(cust_id);
 
 /* CREATING TABLE 'STAFF' */
 CREATE TABLE IF NOT EXISTS STAFF(
-    staff_id INT NOT NULL,
+    staff_id INT NOT NULL AUTO_INCREMENT,
     first_name VARCHAR(255) NOT NULL,
     last_name VARCHAR(255) NOT NULL,
     email_address VARCHAR(255) NOT NULL,
