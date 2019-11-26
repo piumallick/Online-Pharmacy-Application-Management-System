@@ -109,8 +109,8 @@ ALTER TABLE SUPPLIER AUTO_INCREMENT = 3000;
 CREATE TABLE IF NOT EXISTS STOCK (
   stock_id int NOT NULL AUTO_INCREMENT,
   supply_date date NOT NULL,
-  tax_pct float NOT NULL,
-  total_cost float (20) NOT NULL,
+  overhead_pct float NOT NULL,
+  total_cost float (20) NOT NULL DEFAULT 0,
   supplier_id int NOT NULL,
   PRIMARY KEY (stock_id),
   CONSTRAINT Supplier_Stock_Details FOREIGN KEY
