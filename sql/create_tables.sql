@@ -18,11 +18,12 @@ CREATE TABLE IF NOT EXISTS STORE(
   email_address VARCHAR(255) NOT NULL,
   passwd VARCHAR(255) NOT NULL,
   phone_number VARCHAR(255) NOT NULL,
-   address VARCHAR(255) NOT NULL,
-   gender VARCHAR(1) NOT NULL,
-   dob DATE NOT NULL,
-   PRIMARY KEY(cust_id)
-
+  address VARCHAR(255) NOT NULL,
+  gender VARCHAR(1) NOT NULL,
+  dob DATE NOT NULL,
+  PRIMARY KEY(cust_id),
+  CONSTRAINT unique_email UNIQUE (email_address),
+  CONSTRAINT unique_phone UNIQUE (phone_number)
   );
 
 /* ALTER TABLE SCRIPT FOR AUTO_INCREMENT ON PRIMARY KEY */
@@ -46,7 +47,9 @@ CREATE TABLE IF NOT EXISTS STAFF(
     store_id INT NOT NULL,
     PRIMARY KEY (staff_id),
     CONSTRAINT Store_details FOREIGN KEY
-                (store_id) REFERENCES STORE(store_id)
+                (store_id) REFERENCES STORE(store_id),
+   CONSTRAINT unique_email UNIQUE (email_address),
+   CONSTRAINT unique_phone UNIQUE (phone_number)
  );
 
 /* ALTER TABLE SCRIPT FOR AUTO_INCREMENT ON PRIMARY KEY */
