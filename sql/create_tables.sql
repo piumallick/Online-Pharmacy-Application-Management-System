@@ -97,7 +97,9 @@ CREATE TABLE IF NOT EXISTS SUPPLIER (
   address varchar (255) NOT NULL,
   phone_number varchar (20) NOT NULL,
   email_address varchar (20) NOT NULL,
-  PRIMARY KEY (supplier_id)
+  PRIMARY KEY (supplier_id),
+  CONSTRAINT unique_email UNIQUE (email_address),
+  CONSTRAINT unique_phone UNIQUE (phone_number)
 );
 
 /* ALTER TABLE SCRIPT FOR AUTO_INCREMENT ON PRIMARY KEY */
