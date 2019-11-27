@@ -180,12 +180,15 @@ CREATE TABLE IF NOT EXISTS ORDERS(
 CREATE TABLE IF NOT EXISTS ORDER_ITEMS(
     order_id INT NOT NULL,
     medicine_id INT NOT NULL,
-    unit_selling_price FLOAT NOT NULL,
-    quantity INT NOT NULL,
-    total_amt FLOAT NOT NULL,
+    stock_id INT NOT NULL,
+    unit_selling_price FLOAT NOT NULL DEFAULT 0,
+    quantity INT NOT NULL DEFAULT 0,
+    total_amt FLOAT NOT NULL DEFAULT 0,
     PRIMARY KEY(order_id, medicine_id),
     CONSTRAINT Medicine_order_items FOREIGN KEY
                 (medicine_id) REFERENCES HAS_STORE_STOCK(medicine_id),
+    CONSTRAINT Order_Items_Stock FOREIGN KEY,
+    (stock_id) REFERENCES STOCK (stock_id)
     CONSTRAINT Orders_order_items FOREIGN KEY
                 (order_id) REFERENCES ORDERS(order_id)
 );
