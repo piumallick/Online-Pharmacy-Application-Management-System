@@ -184,7 +184,7 @@ CREATE TABLE IF NOT EXISTS ORDER_ITEMS(
     unit_selling_price FLOAT NOT NULL DEFAULT 0,
     quantity INT NOT NULL DEFAULT 0,
     total_amt FLOAT NOT NULL DEFAULT 0,
-    PRIMARY KEY(order_id, medicine_id),
+    PRIMARY KEY(order_id, medicine_id, stock_id),
     CONSTRAINT Medicine_order_items FOREIGN KEY
                 (medicine_id) REFERENCES HAS_STORE_STOCK(medicine_id),
     CONSTRAINT Order_Items_Stock FOREIGN KEY,
