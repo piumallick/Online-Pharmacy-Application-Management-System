@@ -164,7 +164,6 @@ CREATE TABLE IF NOT EXISTS ORDERS(
   order_id int NOT NULL AUTO_INCREMENT,
   total_amt int(20) NOT NULL,
   order_date date NOT NULL,
-  tax_pct float NOT NULL,
   cust_id int NOT NULL,
   store_id int NOT NULL,
   PRIMARY KEY (order_id),
