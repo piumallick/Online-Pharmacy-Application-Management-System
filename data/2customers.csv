@@ -3,11 +3,11 @@ CUST_ID,FIRST_NAME,LAST_NAME,EMAIL_ADDRESS,PASSWD,PHONE_NUMBER,ADDRESS,GENDER,DO
 102,John,Smith,johnsmith@reddit.com,1234567890,4123459087,3459 Fifth Avenue,M,10/15/92
 103,Kevin,Meyers,kevinmeyers@gmail.com,1234567890,5689023456,970 Murray Ave,M,6/11/72
 104,Ana,Lee,analee@gmail.com,1234567890,7120986572,456 North Criag St,F,3/12/90
-105,Mark ,Robinson,markrobinson@hotmail.com,1234567890,9860012345,708 Penn Ave,M,12/10/93
+105,Mark,Robinson,markrobinson@hotmail.com,1234567890,9860012345,708 Penn Ave,M,12/10/93
 106,Julia,Stewarts,juliastewarts@outlook.com,1234567890,4023458901,567 Carson St,F,3/6/69
 107,Riley,Hall,rileyhall@gmail.com,1234567890,3418902345,5600 Bellefront Ave,M,12/9/89
 108,Alyssa,Lewis,alyssalewis@gmail.com,1234567890,8048901238,871 Bellefield Ave,F,7/23/98
-109,Sadie ,Ward,sadieward@gmail.com,1234567890,9423570121,2100 Lincon St,F,8/8/84
+109,Sadie,Ward,sadieward@gmail.com,1234567890,9423570121,2100 Lincon St,F,8/8/84
 110,Simon,Cowell,simoncowell@hotmail.com,1234567890,9838467352,048 Doerrville Ave,M,2/12/64
 111,Savannah,Perez,savannahperez@gmail.com,1234567890,2334800123,4 Winds St,F,9/13/85
 112,Mathew,Gilbert,mathewgilbert@hotmail.com,1234567890,6077231567,678 Bradsford St,M,3/18/79

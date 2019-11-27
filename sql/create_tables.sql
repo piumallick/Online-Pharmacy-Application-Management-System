@@ -110,7 +110,7 @@ CREATE TABLE IF NOT EXISTS STOCK (
   stock_id int NOT NULL AUTO_INCREMENT,
   supply_date date NOT NULL,
   overhead_pct float NOT NULL,
-  total_cost float (20) NOT NULL DEFAULT 0,
+  total_cost NUMERIC(20,10) NOT NULL DEFAULT 0,
   supplier_id int NOT NULL,
   PRIMARY KEY (stock_id),
   CONSTRAINT Supplier_Stock_Details FOREIGN KEY
@@ -124,12 +124,12 @@ ALTER TABLE STOCK AUTO_INCREMENT = 4000;
 CREATE TABLE IF NOT EXISTS HAS_STOCK_SUPPLY(
     stock_id INT NOT NULL,
     supplier_id INT NOT NULL,
-    unit_cost_price FLOAT NOT NULL DEFAULT 0,
+    unit_cost_price NUMERIC(7,4) NOT NULL DEFAULT 0,
     medicine_id INT NOT NULL,
     manufacture_date DATE NOT NULL,
     expiry_date DATE NOT NULL,
     quantity INT(20) NOT NULL DEFAULT 0,
-    total_cost float (20) NOT NULL DEFAULT 0,
+    total_cost NUMERIC(20,10) NOT NULL DEFAULT 0,
     PRIMARY KEY(
         stock_id,
         supplier_id,
@@ -149,7 +149,7 @@ CREATE TABLE IF NOT EXISTS HAS_STORE_STOCK (
   stock_id int NOT NULL,
   medicine_id int NOT NULL,
   availability_of_medicine varchar (4) NOT NULL,
-  unit_selling_price FLOAT NOT NULL DEFAULT 0,
+  unit_selling_price NUMERIC(7,4) NOT NULL DEFAULT 0,
   PRIMARY KEY (stock_id,store_id,medicine_id),
     CONSTRAINT Store_Stock_Detail FOREIGN KEY
     (stock_id) REFERENCES STOCK (stock_id),
@@ -162,7 +162,7 @@ CREATE TABLE IF NOT EXISTS HAS_STORE_STOCK (
 /* CREATING TABLE 'ORDERS' */
 CREATE TABLE IF NOT EXISTS ORDERS(
   order_id int NOT NULL AUTO_INCREMENT,
-  total_amt int(20) NOT NULL,
+  total_amt NUMERIC(20,10) NOT NULL,
   order_date date NOT NULL,
   cust_id int NOT NULL,
   store_id int NOT NULL,
@@ -181,9 +181,9 @@ CREATE TABLE IF NOT EXISTS ORDER_ITEMS(
     order_id INT NOT NULL,
     medicine_id INT NOT NULL,
     stock_id INT NOT NULL,
-    unit_selling_price FLOAT NOT NULL DEFAULT 0,
+    unit_selling_price NUMERIC(7,4) NOT NULL DEFAULT 0,
     quantity INT NOT NULL DEFAULT 0,
-    total_amt FLOAT NOT NULL DEFAULT 0,
+    total_amt NUMERIC(20,10) NOT NULL DEFAULT 0,
     PRIMARY KEY(order_id, medicine_id, stock_id),
     CONSTRAINT Medicine_order_items FOREIGN KEY
                 (medicine_id) REFERENCES HAS_STORE_STOCK(medicine_id),
