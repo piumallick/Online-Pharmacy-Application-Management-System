@@ -129,6 +129,7 @@ CREATE TABLE IF NOT EXISTS HAS_STOCK_SUPPLY(
     manufacture_date DATE NOT NULL,
     expiry_date DATE NOT NULL,
     quantity INT(20) NOT NULL,
+    total_cost float (20) NOT NULL DEFAULT 0,
     PRIMARY KEY(
         stock_id,
         supplier_id,
