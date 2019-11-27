@@ -124,7 +124,7 @@ INSERT INTO MEDICINE VALUES(1083,"Vitamin B12 1000mcg x 50","Essential Vitamin")
 INSERT INTO MEDICINE VALUES(1084,"Vitamin B12 2500mcg x 110","Essential Vitamin");
 INSERT INTO MEDICINE VALUES(1085,"Vitamin C 500mg x 100","Essential Vitamin");
 INSERT INTO MEDICINE VALUES(1086,"Vitamin D 400iu x 100","Essential Vitamin");
-INSERT INTO MEDICINE VALUES(1087,"Vitamin D 1000iu x 100,Essential Vitamin");
+INSERT INTO MEDICINE VALUES(1087,"Vitamin D 1000iu x 100",Essential Vitamin");
 INSERT INTO MEDICINE VALUES(1088,"Vitamin D 2000iu x 100","Essential Vitamin");
 INSERT INTO MEDICINE VALUES(1089,"Vitamin E 400iu x 100","Essential Vitamin");
 INSERT INTO MEDICINE VALUES(1090,"Calcium Citrate 400mg x 100","Calcium Tablet");
