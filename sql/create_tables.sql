@@ -40,11 +40,11 @@ CREATE TABLE IF NOT EXISTS STAFF(
     email_address VARCHAR(255) NOT NULL,
     passwd VARCHAR(255) NOT NULL,
     phone_number VARCHAR(255) NOT NULL,
-    role VARCHAR(20) NOT NULL,
+    ssn INT NOT NULL,
     date_of_joining DATE NOT NULL,
     salary INT NOT NULL,
-    ssn INT NOT NULL,
     store_id INT NOT NULL,
+    role VARCHAR(20) NOT NULL,
     PRIMARY KEY (staff_id),
     CONSTRAINT Store_details FOREIGN KEY
                 (store_id) REFERENCES STORE(store_id),
