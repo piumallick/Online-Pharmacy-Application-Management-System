@@ -124,11 +124,11 @@ ALTER TABLE STOCK AUTO_INCREMENT = 4000;
 CREATE TABLE IF NOT EXISTS HAS_STOCK_SUPPLY(
     stock_id INT NOT NULL,
     supplier_id INT NOT NULL,
-    unit_cost_price FLOAT NOT NULL,
+    unit_cost_price FLOAT NOT NULL DEFAULT 0,
     medicine_id INT NOT NULL,
     manufacture_date DATE NOT NULL,
     expiry_date DATE NOT NULL,
-    quantity INT(20) NOT NULL,
+    quantity INT(20) NOT NULL DEFAULT 0,
     total_cost float (20) NOT NULL DEFAULT 0,
     PRIMARY KEY(
         stock_id,
