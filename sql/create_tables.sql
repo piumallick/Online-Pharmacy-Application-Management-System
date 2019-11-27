@@ -187,8 +187,8 @@ CREATE TABLE IF NOT EXISTS ORDER_ITEMS(
     PRIMARY KEY(order_id, medicine_id, stock_id),
     CONSTRAINT Medicine_order_items FOREIGN KEY
                 (medicine_id) REFERENCES HAS_STORE_STOCK(medicine_id),
-    CONSTRAINT Order_Items_Stock FOREIGN KEY,
-    (stock_id) REFERENCES STOCK (stock_id)
+    CONSTRAINT Order_Items_Stock FOREIGN KEY
+    (stock_id) REFERENCES STOCK (stock_id),
     CONSTRAINT Orders_order_items FOREIGN KEY
                 (order_id) REFERENCES ORDERS(order_id)
 );
