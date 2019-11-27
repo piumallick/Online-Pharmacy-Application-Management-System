@@ -149,6 +149,7 @@ CREATE TABLE IF NOT EXISTS HAS_STORE_STOCK (
   stock_id int NOT NULL,
   medicine_id int NOT NULL,
   availability_of_medicine varchar (4) NOT NULL,
+  unit_selling_price FLOAT NOT NULL DEFAULT 0,
   PRIMARY KEY (stock_id,store_id,medicine_id),
     CONSTRAINT Store_Stock_Detail FOREIGN KEY
     (stock_id) REFERENCES STOCK (stock_id),
