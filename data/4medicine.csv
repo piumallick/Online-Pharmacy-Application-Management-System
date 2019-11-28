@@ -22,7 +22,7 @@ MEDICINE_ID,MEDICINE_NAME,MEDICINE DESC
 1021,Clotrimazole Vaginal 7 day,Antifungal Vaginal Cream
 1022,Miconazole Vaginal 7 day,Antifungal Ointment
 1023,Clotrimazole Vaginal 3 day,Antifungal Cream
-1024,Midol,Menstral Pain Relief System
+1024,Midol ,Menstral Pain Relief System
 1025,Tampax Super,Tampons Super Flow
 1026,Tampax Pearl,Tampons Regular Flow
 1027,Preganacy test,Preganacy test
@@ -49,18 +49,18 @@ MEDICINE_ID,MEDICINE_NAME,MEDICINE DESC
 1048,Ranitidine I 50mg,Treatment of Gastric Hyperactivity
 1049,Omeprazole 20mg,Acid Reducer
 1050,Loperamide 2mg,Anti- Diarrheal
-1051,Bisacodyl Laxative,Gentle  Predictive Overnight Relief
+1051,Bisacodyl Laxative,"Gentle, Predictive, Overnight Relief"
 1052,Docusate Stool Softener,Constipation Relief
 1053,Generic Miralax Laxative,Constipation Relief
 1054,Senna 8.6mg,Natural Vegetable Constipation Relief
-1055,CereVe Lotion,Facial Oil free moisturizer
+1055,CereVe Lotion,Facial Oil-free moisturizer
 1056,Petroleum Jelly 3.75 oz,Skin protecting Jelly
-1057,Hydrocortisone 1 percent Cream,Used to treat a variety of skin conditions
-1058,Clotrimazole 1 percent Cream,Used to treat a variety of skin conditions
-1059,Terbinafine 1 percent Cream,Antifungal Cream
+1057,Hydrocortisone 1% Cream,Used to treat a variety of skin conditions.
+1058,Clotrimazole 1% Cream,Used to treat a variety of skin conditions.
+1059,Terbinafine 1% Cream,Antifungal Cream
 1060,Triple Antibiotic Ointment,Used to prevent and treat minor skin infections
-1061,Benzoyl Peroxide 5 percent Wash,Used for treatment of Acne
-1062,Benzoyl Peroxide 10 percent Wash,Used for treatment of Acne
+1061,Benzoyl Peroxide 5% Wash,Used for treatment of Acne
+1062,Benzoyl Peroxide 10% Wash,Used for treatment of Acne
 1063,SPF 30 Sunscreen Spray,Sun protection from UV rays
 1064,CereVe Baby Lotion,Moisturizer for baby
 1065,Toothbrush,Detnal health
@@ -74,11 +74,11 @@ MEDICINE_ID,MEDICINE_NAME,MEDICINE DESC
 1073,Hand Sanitizer 12 oz,Hygiene
 1074,Bar Soap,Hygiene
 1075,Band Aids Assorted,Band-aid for cuts and wounds
-1076,Hydrogen Peroxide 3 percent,Antiseptic Solution
+1076,Hydrogen Peroxide 3 %,Antiseptic Solution
 1077,Gummy Multivitamin x 70,Complete Multivitamin for adults
 1078,Daily Multivitamins Assorted,Complete Multivitamin for adults
 1079,PreNatal Vitamins x 100,Multivitamin for Women during and after pregnancy
-1080,Biotin 5000mcg x 110,B-complex vitamin for normal metabolism of carbs protein & fats
+1080,Biotin 5000mcg x 110,"B-complex vitamin for normal metabolism of carbs, protein & fats"
 1081,Vitamin B1 100mcg x 100,Essential Vitamin
 1082,Vitamin B6 100mg x 100,Essential Vitamin
 1083,Vitamin B12 1000mcg x 50,Essential Vitamin
@@ -96,16 +96,16 @@ MEDICINE_ID,MEDICINE_NAME,MEDICINE DESC
 1095,Folic Acid 1mg x 100,B Complex Tablet
 1096,Ferrous Sulfate 325mg x 100,Iron Supplement Tablet
 1097,Slow Fe 45mg x 30,Iron Supplement Tablet
-1098,Ferrous Gluconate 27mg x 100�,Iron Supplement Tablet
+1098,Ferrous Gluconate 27mg x 100,Iron Supplement Tablet
 1099,Zinc 50mg x 100,Zinc Supplement Tablet
 1100,Magnesium 400mg x 60,Magnesium Supplement Tablet
 1101,Glucosamine 1000mg x 120,Nutritional support for joints
 1102,Glucosamine/Chondroitin x 60,Nutritional support for joints
 1103,Melatonin 5mg x 120,Melatonin Supplement Tablet
-1104,Men's Healthy Testorsterone,Testorsterone & Sexual Support
+1104,Men's Healthy Testorsterone ,Testorsterone & Sexual Support
 1105,Protein Powder For Female,Protien Dietery Supplement
-1106,Protein Powder For Men,Protein Dietery Supplement
-1107,Benzocaine 7 percent Gel,Male Desensatizing Ejaculatory Control Gel
-1108,Shaving Gel,Shaving Gel
-1109,After Shave Lotion,100 percent Alcohol After Shave
+1106,Protein Powder For Men,Protien Dietery Supplement
+1107,Benzocaine 75% Gel,Male Desensatizing Ejaculatory Control Gel
+1108,Shaving Gel ,Shaving Gel
+1109,After Shave Lotion,100% Alcohol After Shave
 1110,Women's supplements,Essential Vitamin for Woman's Health
