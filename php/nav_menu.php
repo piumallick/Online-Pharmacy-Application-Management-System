@@ -23,7 +23,7 @@
    </p>
 <?php
 
-   } elseif ($_SESSION['role'] == "salesperson") {
+   } elseif ($_SESSION['role'] == "S") {
 
 ?>
    <p>  
@@ -33,7 +33,7 @@
 	<a href="orderMeds.php">Order Medications</a> |
     <a href="processOrder.php">Process Order</a> |
 	<a href="customer.php">Customer Info</a> | 
-	<a href="viewCustomers.php">View Customers</a> | 
+	<a href="viewCustomers.php?show=all">View Customers</a> | 
 	<a href="stock.php">Add Stock</a> | 
 	<a href="viewStocks.php">View Stocks</a> | 
 	<a href="order.php">Order Info</a> | 
@@ -45,7 +45,7 @@
 
 <?php
 
-   } elseif ($_SESSION['role'] == "manager") {
+   } elseif ($_SESSION['role'] == "M") {
 
 ?>
    <p>  
