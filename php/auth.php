@@ -10,9 +10,14 @@
 
     $customer =  array("dashboard","index", "searchMeds","cart","orderMeds");
     
-    $salesperson =  array("dashboard", "index", "searchMeds", "orderMeds", "processOrders", "customer", "viewCustomers",  "stock", "viewStocks", "order", "viewOrders", "viewStoreStocks", "storeStockItems" );
+    $salesperson =  array("dashboard", "index", "searchMeds", "orderMeds", "processOrders", 
+                          "customer", "viewCustomers", "editCustomer", 
+                          "category", "viewCategories", "editCategory", 
+                          "stock", "viewStocks", 
+                          "order", "viewOrders", 
+                          "viewStoreStocks", "storeStockItems" );
     
-    $manager =  array("dashboard", "index", "searchMeds", "orderMeds", "processOrders", "customer", "viewCustomers",  "stock", "viewStocks", "order", "viewOrders", "viewStoreStocks", "storeStockItems" , "staff", "viewStaff", "store", "viewStores", "supplier", "viewSuppliers", "annualReport");
+    $manager =  array("dashboard", "index", "searchMeds", "orderMeds", "processOrders", "customer", "viewCustomers",                               "editCustomer", "stock", "viewStocks", "order", "viewOrders", "viewStoreStocks", "storeStockItems" ,                            "staff", "viewStaff", "store", "viewStores", "supplier", "viewSuppliers", "annualReport");
 
     $cur_page = basename($_SERVER['SCRIPT_NAME'], ".php");
     $role = $_SESSION["role"];
@@ -25,9 +30,9 @@
 	$have_access = in_array($cur_page, $guest); 
     } elseif ($role == "customer") {
 	$have_access = in_array($cur_page, $customer);
-    } elseif ($role == "salesperson") {
+    } elseif ($role == "S") {
 	$have_access = in_array($cur_page, $salesperson);
-    } elseif ($role == "manager") {
+    } elseif ($role == "M") {
 	$have_access = in_array($cur_page, $manager);
     }	
     

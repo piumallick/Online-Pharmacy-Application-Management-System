@@ -38,30 +38,32 @@ if (isset($_POST['email'])) {
             $_SESSION['email'] = $row['email_address'];
             $_SESSION['fname'] = $row['first_name'];
             $_SESSION['lname'] = $row['last_name'];
-	    
-	    //echo "role: ".$role;
+	        $_SESSION["store_id"] = $row["store_id"];
+	        //echo "role: ".$role;
 	     
-	    if ($role == 'staff') { 
-	       $_SESSION['role'] = $row['role'];
-	    }
+            if ($role == 'staff') { 
+               $_SESSION['role'] = $row['role'];
+            } else {
+               $_SESSION['role'] = $role;
+            }
 
             /* free result set */ 
             mysqli_free_result($result);
 
-            //echo "In secure are ".$_SESSION['email'].", ".$_SESSION['fname'].", ".$_SESSION['lname'].", ". $_SESSION['role'];
-	    header("Location: index.php"); // Redirect user to index.php
-	    //die();
+            //echo "In secure are ".$_SESSION['email'].", ".$_SESSION['fname'].", ".$_SESSION['lname'].", //"$_SESSION['role'];
+	        header("Location: index.php"); // Redirect user to index.php
+	        //die();
 
         } else {
             echo "<div class='form'><h3>Username/password is incorrect.</h3><br/>";
             echo "Click here to <a href='login.php'>Login</a></div>";
-	    die();
+            die();
         }
 
     } else {
-         echo "<div class='form'><h3>Something went wrong.</h3><br/>";
-         echo "Click here to <a href='login.php'>Login</a></div>";
-	 die();
+        echo "<div class='form'><h3>Something went wrong.</h3><br/>";
+        echo "Click here to <a href='login.php'>Login</a></div>";
+        die();
    }
       
 
