@@ -2,16 +2,25 @@
 
 include("includes.php"); // Contain all necessary include files 
 
-if (isset($_SESSION['new_customer'])) {
-
-    $new_customer =  $_SESSION['new_customer'];
-    $msg = "New Customer Shown Below: ";
-
-} else {
+if (isset($_GET['show'])) {
 	
     echo "No Results";
-    die();
-}
+    $query="SELECT * FROM CUSTOMERS";
+    
+} elseif (isset($_SESSION['cust_id'])) {
+
+    $cust_id =  $_SESSION['cust_id'];
+    if ($_SESSION['form_action']== 'insert') {
+        
+        $msg = "New Customer Shown Below: ";
+    
+    } elseif ($_SESSION['form_action']== 'update') {
+    
+        $msg = "The Customer Below was Updated successfully: ";
+    }
+    $query="SELECT * FROM CUSTOMERS WHERE cust_id =".$cust_id;
+
+} 
 
 ?>
 
@@ -34,12 +43,11 @@ if (isset($_SESSION['new_customer'])) {
 
             <h1> List Customers </h1>
             
-	    <div class="msg">  <?php echo $msg; ?> </div>
+	    <div class="msg"> <p><?php echo $msg; ?></p> </div>
 
             <table width="100%" border="1" style="border-collapse:collapse;">
                 <thead>
                     <tr>
-                        <th><strong>Customer ID</strong></th>
                         <th><strong>Name</strong></th>
                         <th><strong>Email</strong></th>
                         <th><strong>Phone</strong></th>
@@ -47,52 +55,45 @@ if (isset($_SESSION['new_customer'])) {
                         <th><strong>Gender</strong></th>
                         <th><strong>Date of Birth</strong></th>
                         <th><strong>Edit</strong></th>
-                        <th><strong>Delete</strong></th>
-                </tr>
-            </thead>
+                    </tr>
+                </thead>
             <tbody>
                 <?php
+
+                  //echo $query;
+                  $form_action = "edit";
+                  $result = mysqli_query($con, $query);
+                  while($row = mysqli_fetch_assoc($result)) { ?>
+                        <tr>
+                            <td align="center">
+                                <?php echo $row["first_name"]." ".$row["last_name"]; ?>
+                            </td>
+                            <td align="center">
+                                <?php echo $row["email_address"]; ?>
+                            </td>
+                            <td align="center">
+                                <?php echo $row["phone_number"]; ?>
+                            </td>
+                            <td align="center">
+                                <?php echo $row["address"]; ?>
+                            </td>
+                            <td align="center">
+                                <?php echo $row["gender"]; ?>
+                            </td>
+                            <td align="center">
+                                <?php echo $row["dob"]; ?>
+                            </td>
+                            <td align="center">
+                                <a href="editCustomer.php?cust_id=<?php echo $row['cust_id']; ?>">Edit</a>
+                            </td>
+
+                        </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
                     
-		    $query="SELECT * FROM CUSTOMERS WHERE cust_id =".$new_customer.";";
-		   
-		    //echo $query;
-		    $result = mysqli_query($con, $query);
-		    while($row = mysqli_fetch_assoc($result)) { ?>
-                    
-		    <tr>
-                        <td align="center">
-                            <?php echo $row["cust_id"]; ?>
-                        </td>
-                        <td align="center">
-                            <?php echo $row["first_name"]." ".$row["last_name"]; ?>
-                        </td>
-                        <td align="center">
-                            <?php echo $row["email_address"]; ?>
-                        </td>
-                        <td align="center">
-                            <?php echo $row["phone_number"]; ?>
-                        </td>
-                        <td align="center">
-                            <?php echo $row["address"]; ?>
-                        </td>
-                        <td align="center">
-                            <?php echo $row["gender"]; ?>
-                        </td>
-                        <td align="center">
-                            <?php echo $row["dob"]; ?>
-                        </td>
-			<td align="center">
-			    <a href="customer.php?id=<?php echo $row["cust_id"]; ?>">Edit</a></td>
-                        <td align="center"><a href="delete.php?id=<?php echo $row["cust_id"]; ?>">Delete</a></td>
-                    </tr>
-                <?php } ?>
-            </tbody>
-        </table>
-                    
-                    <br />
-                    <br />
-                    <br />
-                    <br />
+                   
+            <br />
         </div>
     </body>
 </html>
