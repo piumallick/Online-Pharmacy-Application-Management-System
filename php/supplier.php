@@ -5,7 +5,7 @@ include("includes.php"); // Contain all necessary include files
 ?>
 <!DOCTYPE html>
 <html>
-
+<!-- head starts here -->
     <head>
         <meta charset="utf-8">
         <title>
