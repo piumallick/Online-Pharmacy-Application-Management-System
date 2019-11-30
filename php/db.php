@@ -6,7 +6,7 @@ Website: https://www.allphptricks.com/
 
 
 
-$con = mysqli_connect("localhost","root","root","ONLINE_DATABASE_PHARMACY",);
+$con = mysqli_connect("localhost","root","","online_database_pharmacy");
 
 // Check connection
 if (mysqli_connect_errno())
