@@ -18,6 +18,8 @@
    	<a href="dashboard.php">Dashboard</a> | 
 	<a href="index.php">Index</a> | 
     <a href="searchMeds.php">Search Medication</a> | 
+    <a href="viewOrders.php">View Orders</a> |
+    <a href="viewMeds.php">View Medicines</a>|
 	<a href="cart.php">Cart</a> |
 	<a href="logout.php">Logout</a>
    </p>

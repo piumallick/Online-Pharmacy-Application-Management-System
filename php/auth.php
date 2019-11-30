@@ -8,13 +8,13 @@
     } 
     $guest = array("dashboard", "index", "searchMeds","cart");
 
-    $customer =  array("dashboard","index", "searchMeds","cart","orderMeds");
+    $customer =  array("dashboard","index", "searchMeds","cart","orderMeds","viewMeds", "viewOrders", "viewOrderDetail");
     
     $salesperson =  array("dashboard", "index", "searchMeds", "orderMeds", "processOrders", 
                           "customer", "viewCustomers", "editCustomer", 
                           "category", "viewCategories", "editCategory", 
                           "medicine", "viewMedicines", "editMedicine", 
-                          "stock", "viewStocks", 
+                          "stock", "viewStocks", "viewOrderDetail",
                           "order", "viewOrders", "viewStoreStocks", "storeStockItems" );
     
     $manager =  array("dashboard", "index", "searchMeds", "orderMeds", "processOrders", 
@@ -22,7 +22,7 @@
                       "category", "viewCategories", "editCategory", 
                       "medicine", "viewMedicines", "editMedicine", 
                       "stock", "viewStocks", "viewStoreStocks", "storeStockItems" ,
-                      "order", "viewOrders",                             
+                      "order", "viewOrders", "viewOrderDetail",                             
                       "staff", "viewStaff", "editStaff", 
                       "store", "viewStores", "editStore", 
                       "supplier", "viewSuppliers", "editSupplier", 

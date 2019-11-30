@@ -82,3 +82,9 @@ select {
 .error_msg {
     color: #F00;
 }
+
+.medicine-quanity {
+    padding: 5px;
+    width: 30px !important;
+    margin: 10px;
+}
