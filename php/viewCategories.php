@@ -5,20 +5,20 @@ include("includes.php"); // Contain all necessary include files
 if (isset($_GET['show'])) {
 	
     echo "No Results";
-    $query="SELECT * FROM SUPPLIER";
+    $query="SELECT * FROM CATEGORY";
     
-} elseif (isset($_SESSION['the_supplier_id'])) {
+} elseif (isset($_SESSION['category_id'])) {
 
-    $the_supplier_id =  $_SESSION['the_supplier_id'];
+    $category_id =  $_SESSION['category_id'];
     if ($_SESSION['form_action']== 'insert') {
         
-        $msg = "The Supplier Shown Below Was Successfully Added: ";
+        $msg = "New Category Shown Below: ";
     
     } elseif ($_SESSION['form_action']== 'update') {
     
-        $msg = "The Supplier Shown Below was Updated successfully: ";
+        $msg = "The Catergory Below was Updated successfully: ";
     }
-    $query="SELECT * FROM SUPPLIER WHERE supplier_id =".$the_supplier_id.";";
+    $query="SELECT * FROM CATEGORY WHERE category_id =".$category_id.";";
 
 } 
 
@@ -30,7 +30,7 @@ if (isset($_GET['show'])) {
     <head>
         <meta charset="utf-8">
         <title>
-            List Suppliers
+            List Categories
         </title>
         <link rel="stylesheet" href="../css/style.css" />
     </head>
@@ -41,45 +41,50 @@ if (isset($_GET['show'])) {
 
             <?php include("nav_menu.php"); ?>
 
-            <h1> List Suppliers </h1>
+            <h1> List Categories </h1>
             
-	        <div class="msg"> <p><?php echo $msg; ?></p> </div>
+	    <div class="msg"> <p><?php echo $msg; ?></p> </div>
 
             <table width="100%" border="1" style="border-collapse:collapse;">
                 <thead>
                     <tr>
-                        <th><strong>Supplier Name</strong></th>
-                        <th><strong>Address</strong></th>
-                        <th><strong>Phone Number</strong></th>
-                        <th><strong>Email Address</strong></th>
+                        <th><strong>Name</strong></th>
+                        <th><strong>Lower Age Limit</strong></th>
+                        <th><strong>Upper Age Limit</strong></th>
+                        <th><strong>Gender</strong></th>
                         <th><strong>Edit</strong></th>
                     </tr>
                 </thead>
             <tbody>
                 <?php
+
+                  //echo $query;
                   $form_action = "edit";
                   $result = mysqli_query($con, $query);
                   while($row = mysqli_fetch_assoc($result)) { ?>
                         <tr>
                             <td align="center">
-                                <?php echo $row["supplier_name"]; ?>
+                                <?php echo $row["category_name"]; ?>
                             </td>
                             <td align="center">
-                                <?php echo $row["address"]; ?>
+                                <?php echo $row["lower_age"]; ?>
                             </td>
                             <td align="center">
-                                <?php echo $row["phone_number"]; ?>
+                                <?php echo $row["upper_age"]; ?>
                             </td>
                             <td align="center">
-                                <?php echo $row["email_address"]; ?>
+                                <?php echo $row["gender"]; ?>
                             </td>
                             <td align="center">
-                                <a href="editSupplier.php?the_supplier_id=<?php echo $row["supplier_id"]; ?>">Edit</a>
+                                <a href="editCategory.php?category_id=<?php echo $row["category_id"]; ?>">Edit</a>
                             </td>
+
                         </tr>
                     <?php } ?>
                 </tbody>
             </table>
+                    
+                   
             <br />
         </div>
     </body>

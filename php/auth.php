@@ -8,15 +8,25 @@
     } 
     $guest = array("dashboard", "index", "searchMeds","cart");
 
-    $customer =  array("dashboard","index", "searchMeds","cart","orderMeds", "viewOrders","viewOrderDetail");
+    $customer =  array("dashboard","index", "searchMeds","cart","orderMeds");
     
-    $salesperson =  array("dashboard", "index", "searchMeds", "category", "viewCategories", "editCategory","orderMeds", "processOrders", "customer", 
-    "viewCustomers","editCustomer" , "stock", "editStockItem", "order", "viewOrders", "viewStoreStocks", "storeStockItems", "deleteStockItem" ,"viewOrderDetail");
+    $salesperson =  array("dashboard", "index", "searchMeds", "orderMeds", "processOrders", 
+                          "customer", "viewCustomers", "editCustomer", 
+                          "category", "viewCategories", "editCategory", 
+                          "medicine", "viewMedicines", "editMedicine", 
+                          "stock", "viewStocks", 
+                          "order", "viewOrders", "viewStoreStocks", "storeStockItems" );
     
-    $manager =  array("dashboard", "index", "searchMeds", "orderMeds", 
-    "processOrders", "customer", "viewCustomers","editCustomer" ,  "stock", "viewStocks", "editStockItem","order", 
-    "viewOrders", "viewStoreStocks", "storeStockItems" , "deleteStockItem", "staff", "viewStaff", "store", "viewStores", "supplier", 
-    "viewSuppliers", "viewOrders","viewOrderDetail" ,"annualReport");
+    $manager =  array("dashboard", "index", "searchMeds", "orderMeds", "processOrders", 
+                      "customer", "viewCustomers", "editCustomer", 
+                      "category", "viewCategories", "editCategory", 
+                      "medicine", "viewMedicines", "editMedicine", 
+                      "stock", "viewStocks", "viewStoreStocks", "storeStockItems" ,
+                      "order", "viewOrders",                             
+                      "staff", "viewStaff", "editStaff", 
+                      "store", "viewStores", "editStore", 
+                      "supplier", "viewSuppliers", "editSupplier", 
+                      "annualReport");
 
     $cur_page = basename($_SERVER['SCRIPT_NAME'], ".php");
     $role = $_SESSION["role"];
@@ -38,7 +48,7 @@
     if (!$have_access) {
 
 	echo "<div class='form'><h3> Sorry you do not have privileges to use this page.</h3>";
-	echo "<br/>Click here to get back to your <a href='dashboard.php'>Dashboard</a></div>";
+	echo "<br/>Click here to get back to your <a href='dashboard.php'>Dashborad</a></div>";
 	exit();
     }
 ?>
