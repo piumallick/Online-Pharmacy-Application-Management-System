@@ -18,7 +18,7 @@ if (isset($_GET['show'])) {
     
         $msg = "The Customer Below was Updated successfully: ";
     }
-    $query="SELECT * FROM CUSTOMERS WHERE cust_id =".$cust_id.";";
+    $query="SELECT * FROM CUSTOMERS WHERE cust_id =".$cust_id;
 
 } 
 

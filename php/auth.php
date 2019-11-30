@@ -10,14 +10,9 @@
 
     $customer =  array("dashboard","index", "searchMeds","cart","orderMeds");
     
-    $salesperson =  array("dashboard", "index", "searchMeds", "orderMeds", "processOrders", 
-                          "customer", "viewCustomers", "editCustomer", 
-                          "category", "viewCategories", "editCategory", 
-                          "stock", "viewStocks", 
-                          "order", "viewOrders", 
-                          "viewStoreStocks", "storeStockItems" );
+    $salesperson =  array("dashboard", "index", "searchMeds", "orderMeds", "processOrders", "customer", "viewCustomers","editCustomer" , "stock", "viewStocks", "order", "viewOrders", "viewStoreStocks", "storeStockItems" );
     
-    $manager =  array("dashboard", "index", "searchMeds", "orderMeds", "processOrders", "customer", "viewCustomers",                               "editCustomer", "stock", "viewStocks", "order", "viewOrders", "viewStoreStocks", "storeStockItems" ,                            "staff", "viewStaff", "store", "viewStores", "supplier", "viewSuppliers", "annualReport");
+    $manager =  array("dashboard", "index", "searchMeds", "orderMeds", "processOrders", "customer", "viewCustomers","editCustomer" ,  "stock", "viewStocks", "order", "viewOrders", "viewStoreStocks", "storeStockItems" , "staff", "viewStaff", "store", "viewStores", "supplier", "viewSuppliers", "annualReport");
 
     $cur_page = basename($_SERVER['SCRIPT_NAME'], ".php");
     $role = $_SESSION["role"];
@@ -39,7 +34,7 @@
     if (!$have_access) {
 
 	echo "<div class='form'><h3> Sorry you do not have privileges to use this page.</h3>";
-	echo "<br/>Click here to get back to your <a href='dashboard.php'>Dashborad</a></div>";
+	echo "<br/>Click here to get back to your <a href='dashboard.php'>Dashboard</a></div>";
 	exit();
     }
 ?>
