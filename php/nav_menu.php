@@ -19,11 +19,12 @@
 	<a href="index.php">Index</a> | 
     <a href="searchMeds.php">Search Medication</a> | 
 	<a href="cart.php">Cart</a> |
+    <a href="viewOrders.php">View Orders</a> |
 	<a href="logout.php">Logout</a>
    </p>
 <?php
 
-   } elseif ($_SESSION['role'] == "salesperson") {
+   } elseif ($_SESSION['role'] == "S") {
 
 ?>
    <p>  
@@ -45,7 +46,7 @@
 
 <?php
 
-   } elseif ($_SESSION['role'] == "manager") {
+   } elseif ($_SESSION['role'] == "M") {
 
 ?>
    <p>  

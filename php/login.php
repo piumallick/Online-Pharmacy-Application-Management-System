@@ -38,13 +38,17 @@ if (isset($_POST['email'])) {
             $_SESSION['email'] = $row['email_address'];
             $_SESSION['fname'] = $row['first_name'];
             $_SESSION['lname'] = $row['last_name'];
-	        $_SESSION["store_id"] = $row["store_id"];
+            $_SESSION["store_id"] = $row["store_id"];
+           
+            
 	        //echo "role: ".$role;
 	     
             if ($role == 'staff') { 
                $_SESSION['role'] = $row['role'];
+               $_SESSION['staff_id'] = $row['staff_id'];
             } else {
                $_SESSION['role'] = $role;
+               $_SESSION["cust_id"] = $row["cust_id"];
             }
 
             /* free result set */ 

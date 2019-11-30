@@ -8,16 +8,19 @@
     } 
     $guest = array("dashboard", "index", "searchMeds","cart");
 
-    $customer =  array("dashboard","index", "searchMeds","cart","orderMeds");
+    $customer =  array("dashboard","index", "searchMeds","cart","orderMeds", "viewOrders","viewOrderDetail");
     
     $salesperson =  array("dashboard", "index", "searchMeds", "orderMeds", "processOrders", 
                           "customer", "viewCustomers", "editCustomer", 
                           "category", "viewCategories", "editCategory", 
                           "stock", "viewStocks", 
                           "order", "viewOrders", 
-                          "viewStoreStocks", "storeStockItems" );
+                          "viewStoreStocks", "storeStockItems","viewOrderDetail");
     
-    $manager =  array("dashboard", "index", "searchMeds", "orderMeds", "processOrders", "customer", "viewCustomers",                               "editCustomer", "stock", "viewStocks", "order", "viewOrders", "viewStoreStocks", "storeStockItems" ,                            "staff", "viewStaff", "store", "viewStores", "supplier", "viewSuppliers", "annualReport");
+    $manager =  array("dashboard", "index", "searchMeds", "orderMeds", "processOrders", "viewOrders", "customer", 
+                      "viewCustomers", "editCustomer", "stock", "viewStocks", "order", "viewOrders", "viewStoreStocks", 
+                      "storeStockItems", "staff", "viewStaff", "store", "viewStores", "supplier", "viewSuppliers", "annualReport",
+                      "viewOrderDetail");
 
     $cur_page = basename($_SERVER['SCRIPT_NAME'], ".php");
     $role = $_SESSION["role"];
