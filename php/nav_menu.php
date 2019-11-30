@@ -5,7 +5,7 @@
    <p>  
    	<a href="dashboard.php">Dashboard</a> | 
 	<a href="index.php">Index</a> | 
-    <a href="searchMeds.php">Search Medication</a> | 
+    <a href="searchMeds.php?show=all">Search Medication</a> | 
 	<a href="cart.php">Cart</a>
    </p>
 
@@ -17,10 +17,10 @@
    <p>  
    	<a href="dashboard.php">Dashboard</a> | 
 	<a href="index.php">Index</a> | 
-    <a href="searchMeds.php">Search Medication</a> | 
+    <a href="searchMeds.php?show=all">Search Medication</a> | 
 	<a href="cart.php">Cart</a> |
-    <a href="viewOrders.php">View Orders</a> |
 	<a href="logout.php">Logout</a>
+    <a href="viewOrders.php">View Orders</a>
    </p>
 <?php
 
@@ -30,16 +30,16 @@
    <p>  
    	<a href="dashboard.php">Dashboard</a> | 
 	<a href="index.php">Index</a> | 
-    <a href="searchMeds.php">Search Medication</a> | 
+    <a href="viewMeds.php">View Medications</a> | 
+    <a href="searchMeds.php?show=all">Search Medication</a> | 
 	<a href="orderMeds.php">Order Medications</a> |
     <a href="processOrder.php">Process Order</a> |
 	<a href="customer.php">Customer Info</a> | 
 	<a href="viewCustomers.php?show=all">View Customers</a> | 
 	<a href="stock.php">Add Stock</a> | 
-	<a href="viewStocks.php">View Stocks</a> | 
 	<a href="order.php">Order Info</a> | 
     <a href="viewOrders.php">View Orders</a> | 
-    <a href="viewStoreStocks.php">View Store Stocks</a> | 
+    <a href="viewStoreStocks.php?show=all">View Store Stocks</a> | 
     <a href="storeStockItems.php">Stock Item Info</a> | 
 	<a href="logout.php">Logout</a>
    </p>
@@ -52,7 +52,7 @@
    <p>  
    	<a href="dashboard.php">Dashboard</a> | 
 	<a href="index.php">Index</a> | 
-    <a href="searchMeds.php">Search Medication</a> | 
+    <a href="viewMeds.php">View Medication</a> | 
 	<a href="orderMeds.php">Order Medications</a> |
     <a href="processOrder.php">Process Order</a> |
 	<a href="customer.php">Customer Info</a> | 

@@ -9,19 +9,14 @@
     $guest = array("dashboard", "index", "searchMeds","cart");
 
     $customer =  array("dashboard","index", "searchMeds","cart","orderMeds", "viewOrders","viewOrderDetail");
-
-    $salesperson =  array("dashboard", "index", "searchMeds", "orderMeds", "processOrders", 
-                          "customer", "viewCustomers", "editCustomer", 
-                          "category", "viewCategories", "editCategory", 
-                          "stock", "viewStocks", 
-                          "order", "viewOrders", 
-                          "viewStoreStocks", "storeStockItems","viewOrderDetail");
     
-    $manager =  array("dashboard", "index", "searchMeds", "orderMeds", "processOrders", "viewOrders", "customer", 
-                      "viewCustomers", "editCustomer", "stock", "viewStocks", "order", "viewOrders", "viewStoreStocks", 
-                      "storeStockItems", "staff", "viewStaff", "store", "viewStores", "supplier", "viewSuppliers", "annualReport",
-                      "viewOrderDetail");
-
+    $salesperson =  array("dashboard", "index", "searchMeds", "category", "viewCategories", "editCategory","orderMeds", "processOrders", "customer", 
+    "viewCustomers","editCustomer" , "stock", "editStockItem", "order", "viewOrders", "viewStoreStocks", "storeStockItems", "deleteStockItem" ,"viewOrderDetail");
+    
+    $manager =  array("dashboard", "index", "searchMeds", "orderMeds", 
+    "processOrders", "customer", "viewCustomers","editCustomer" ,  "stock", "viewStocks", "editStockItem","order", 
+    "viewOrders", "viewStoreStocks", "storeStockItems" , "deleteStockItem", "staff", "viewStaff", "store", "viewStores", "supplier", 
+    "viewSuppliers", "viewOrders","viewOrderDetail" ,"annualReport");
 
     $cur_page = basename($_SERVER['SCRIPT_NAME'], ".php");
     $role = $_SESSION["role"];

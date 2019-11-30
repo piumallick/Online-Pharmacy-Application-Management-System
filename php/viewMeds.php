@@ -1,7 +1,7 @@
 <?php
 
 include("includes.php"); // Contain all necessary include files 
-
+/* THIS PAGE IS FOR SALESPERSON to view meds */
 ?>
 <!DOCTYPE html>
 <html>

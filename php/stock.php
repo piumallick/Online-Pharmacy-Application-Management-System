@@ -191,15 +191,16 @@ if (mysqli_query($con, $insert_stock)) {
       mysqli_query($con, $update_has_store_stock);
      
     $_SESSION['stock_id'] = $stock_id;
-    header("Location: viewStocks.php");
+    header("Location: storeStockItems.php");
 
 } else {
     
     echo "Was not able to insert stock" . $sql . "" . mysqli_error($con);
    }
 }
+
 else{
-    echo "Please enter the inventory details ...";
+    echo "Please enter the inventory details ... You may add upto 5 items at a time!";
 }
 
 ?>
@@ -235,10 +236,14 @@ else{
                 <td colspan="5">
                     <select class="select" name="supplier">
                                   <option value="">Select Supplier...</option>
-                                  <option value="3001">A</option>
-                                  <option value="3002">B</option>
-                                  <option value="3003">C</option>
-                               </select>
+                                  <?php $query = "SELECT supplier_id, supplier_name FROM SUPPLIER";
+                                      $result = mysqli_query($con, $query);
+                                               while($row = mysqli_fetch_assoc($result)) {
+                        ?>
+                              <option value="<?php echo $row['supplier_id'] ?>"> <?php echo $row["supplier_name"]?></option>
+
+                        <?php } ?>
+                    </select>
                 </td>
                 </tr>
 
