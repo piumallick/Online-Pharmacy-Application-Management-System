@@ -8,44 +8,72 @@ if ( isset($_REQUEST['form_action']) ) {
 
     $form_action = $_REQUEST['form_action'];
     $error_msg = "";
-   
-    $category_id = $_REQUEST["category_id"];
-    $category_name = $_REQUEST["category_name"];
-    $lower_age = $_REQUEST["lower_age"];
-    $upper_age = $_REQUEST["upper_age"];
-    $gender = $_REQUEST["gender"];
+       
+    $medicine_id = $_REQUEST["medicine_id"];
+    $medicine_name = $_REQUEST["medicine_name"];
+    $medicine_desc = $_REQUEST["medicine_desc"];
+    $category_ids= $_REQUEST["categories"];
     
-    //echo "Captured Values: ".$category_name.", ".$lower_age.", ".$upper_age.", ".$gender." ";
+/*
+    echo "Captured Values: ".$medicine_id.", ".$medicine_name.", ".$medicine_desc." ";
+    foreach ($category_ids as $category) 
+        echo $category; 
+*/
+    
+    if  ($form_action == "update") {
 
-    // Validation :
-		   
-    if ($error_msg == "") {
-			
-
-        if  ($form_action == "update") {
-
-            $update = "UPDATE CATEGORY SET category_name='".$category_name."', 
-                                           lower_age='".$lower_age."',      
-                                           upper_age='".$upper_age."', 
-                                           gender='".$gender."'
-                                           WHERE category_id=".$category_id;
+        $update = "UPDATE MEDICINE SET medicine_name='".$medicine_name."', 
+                                       medicine_desc='".$medicine_desc."'      
+                                       WHERE medicine_id=".$medicine_id;
             
-        }
+     }
 	    //echo "SQL: ".$update;
         
-        if (mysqli_query($con, $update)) {
-					   
-            $_SESSION['category_id'] = $category_id;
-            $_SESSION['form_action'] = $form_action;
-            header("Location: viewCategories.php"); // Redirect user to viewCategories.php
+    if (mysqli_query($con, $update)) {
 
-        } else {
+        //Delete existing 
+        $del_exist_med_cat = "DELETE FROM MEDICINE_CATEGORY WHERE medicine_id=".$medicine_id;
+        //echo $del_exist_med_cat; 
+        if (mysqli_query($con, $del_exist_med_cat)) {
+        
+            foreach ($category_ids as $category_id) {
+            //     echo $category; 
 
+                $insert_cat_med = "INSERT INTO MEDICINE_CATEGORY (category_id, medicine_id)
+                                    VALUES (".$category_id.", ".$medicine_id.")";
+                echo $insert_cat_med;
+
+                if (!mysqli_query($con, $insert_cat_med) ) {
+
+                    echo "Error: " . $sql . "" . mysqli_error($con);
+                    echo "All categories were sucessfully entered. Please try again later";
+                    echo "<a href='editMedicine.php?medicine_id=".$medicine_id."' >";
+                    die();
+                }
+
+            }
+
+        
+        } else {                    
+            
             echo "Error: " . $sql . "" . mysqli_error($con);
+            echo "There were problems updating the records. Please try again later";
+            echo "<a href='editMedicine.php?medicine_id=".$medicine_id."' >";
+            die();
+            
         }
 
-    } 
+        $_SESSION['medicine_id'] = $medicine_id;
+        $_SESSION['form_action'] = $form_action;
+        header("Location: viewMedicines.php"); // Redirect user to viewMedicines.php
 
+    } else {
+
+            echo "Error: " . $sql . "" . mysqli_error($con);
+            echo "<br /><br /> The Medicine record was not sucessfully entered. Please try again later";
+            echo "<a href='medicine.php' >";
+            die();
+    }
         
 } else {
        
@@ -55,14 +83,29 @@ if ( isset($_REQUEST['form_action']) ) {
     $form_action = $_SESSION['form_action'];
     $error_msg = "";
    
-    $query = "SELECT * FROM CATEGORY WHERE category_id=".$_GET['category_id'];
+    $medicine_id = $_GET['medicine_id'];
+    $query = "SELECT * FROM MEDICINE WHERE medicine_id=".$medicine_id;
         
-    echo "SQL: ".$query;
+    //echo "SQL: ".$query;
         
     if ($result = mysqli_query($con, $query)) {
             
-        $row = mysqli_fetch_array($result);
-        //echo $row["first_name"];
+        $med_row = mysqli_fetch_array($result);
+        
+        $cat_med_query = "SELECT category_id FROM MEDICINE_CATEGORY WHERE medicine_id=".$medicine_id;
+                     
+        $cat_query = "SELECT category_id, category_name FROM CATEGORY";
+           
+        $options = mysqli_query($con, $cat_query);
+                       
+        $cat_meds = mysqli_query($con, $cat_med_query);                       
+                       
+        //$seld_cat_meds = mysqli_fetch_array($cat_meds, MYSQLI_NUM);
+        $seld_cat_meds[] = array();                
+        while($row = mysqli_fetch_array($cat_meds))
+        {
+            $seld_cat_meds[] = $row['category_id'];
+        }
     }
     $error_msg = "";
 
@@ -74,7 +117,7 @@ if ( isset($_REQUEST['form_action']) ) {
 <html>
     <head>
         <meta charset="utf-8">
-        <title>	Edit Category </title>
+        <title>	Edit Medicine </title>
         <link rel="stylesheet" href="../css/style.css" />
     </head>
     <body> 
@@ -82,27 +125,37 @@ if ( isset($_REQUEST['form_action']) ) {
        
         <div class="form">
             
-		    <h1> Edit Category </h1>
+		    <h1> Edit Medicine </h1>
 			
 		    <form name="form" method="post" action=""> 
 			
                 <div class="error_msg">  <?php echo $error_msg; ?>   </div>
                 
-                <p><input type="text" name="category_name" value="<?php echo $row["category_name"]; ?>" required /></p>
+                <p><input type="text" name="medicine_name" value="<?php echo $med_row["medicine_name"]; ?>" required /></p>
 
-                <p><input type="text" name="lower_age"  value="<?php echo $row["lower_age"]; ?>" required /></p>
+                <p><input type="text" name="medicine_desc"  value="<?php echo $med_row["medicine_desc"]; ?>" required /></p>
+                
+                <p>
+                 <select autofocus class="multi_select" name="categories[]" multiple size = 3 required >
+                  
+                    <?php 
+                                 
+                        while($option = mysqli_fetch_assoc($options)) {
+                           
+                           $selected = "";
+                           if ( in_array($option['category_id'], $seld_cat_meds) )  { $selected = 'selected'; }
+                           
+                    ?>
+                              <option <?php echo $selected ?> value="<?php echo $option['category_id'] ?>" > 
+                                  <?php echo $option['category_name']?>
+                              </option>
 
-                <p><input type="text" name="upper_age" value="<?php echo $row["upper_age"]; ?>" required /></p>
-                <p>       
-			       <select class="select" name="gender" required>
-                      <option value="">Select gender...</option>
-                      <option <?php if ($row['gender'] == 'M' ) echo 'selected' ; ?> value="M">Male</option>
-                      <option <?php if ($row['gender'] == 'F' ) echo 'selected' ; ?> value="F">Female</option>
-                      <option <?php if ($row['gender'] == 'A' ) echo 'selected' ; ?> value="A">All Genders</option>
-                   </select>
+                    <?php } ?>
+                    
+                 </select> 
                 </p>
-            
-                <p><input type="hidden" name="category_id" value="<?php echo $row["category_id"]; ?>"  /></p>
+
+                <p><input type="hidden" name="medicine_id" value="<?php echo $med_row["medicine_id"]; ?>"  /></p>
                 
                 <p><input type="hidden" name="form_action" value="update"  /></p>
 			

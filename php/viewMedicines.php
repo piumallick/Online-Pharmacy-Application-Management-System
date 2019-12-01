@@ -4,7 +4,13 @@ include("includes.php"); // Contain all necessary include files
 
 if (isset($_GET['show'])) {
 	
-    $query="SELECT * FROM MEDICINE";
+    $query="SELECT M.medicine_id, M.medicine_name, M.medicine_desc, GROUP_CONCAT(category_name SEPARATOR',<br />') AS catergories 
+              FROM MEDICINE AS M, CATEGORY as C, MEDICINE_CATEGORY AS MC 
+             WHERE M.medicine_id = MC.medicine_id 
+               AND MC.category_id = C.category_id 
+          GROUP BY M.medicine_id";
+    
+    //echo $query;
     
 } elseif (isset($_SESSION['medicine_id'])) {
 
@@ -17,8 +23,15 @@ if (isset($_GET['show'])) {
     
         $msg = "The Medicine Below was Updated successfully: ";
     }
-    $query="SELECT * FROM MEDICINE WHERE medicine_id =".$medicine_id.";";
-
+    
+    $query="SELECT M.medicine_id, M.medicine_name, M.medicine_desc, GROUP_CONCAT(category_name SEPARATOR',  ') AS catergories 
+              FROM MEDICINE AS M, CATEGORY as C, MEDICINE_CATEGORY AS MC 
+             WHERE M.medicine_id = MC.medicine_id 
+               AND MC.category_id = C.category_id 
+               AND M.medicine_id = ".$medicine_id." 
+          GROUP BY M.medicine_id";
+        
+    //echo $query;
 } 
 
 ?>
@@ -49,6 +62,7 @@ if (isset($_GET['show'])) {
                     <tr>
                         <th><strong>Medicine Name</strong></th>
                         <th><strong>Description</strong></th>
+                        <th><strong>Medication Categories </strong></th>
                         <th><strong>Edit</strong></th>
                     </tr>
                 </thead>
@@ -67,15 +81,16 @@ if (isset($_GET['show'])) {
                                 <?php echo $row["medicine_desc"]; ?>
                             </td>
                             <td align="center">
+                                <?php echo $row["catergories"]; ?>
+                            </td>
+                            <td align="center">
                                 <a href="editMedicine.php?medicine_id=<?php echo $row["medicine_id"]; ?>">Edit</a>
                             </td>
 
                         </tr>
                     <?php } ?>
                 </tbody>
-            </table>
-                    
-                   
+            </table>             
             <br />
         </div>
     </body>
