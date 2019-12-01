@@ -2,11 +2,22 @@
 
     include "includes.php"; // Contain all necessary include files 
 
+    // Initialize to an empty cart
+    if(!isset($_SESSION['cart'])) {
+        $_SESSION['cart'] = array();
+    }
+
     /* THIS PAGE IS FOR SALESPERSON to view meds */
     if(isset($_GET['storeid'])) {
         $storeid = intval($_GET['storeid']);
     } else {
-        $storeid = 0;
+        if(isset($_SESSION['cart-storeid'])) {
+            if($_SESSION['cart-storeid'] > 0) {
+                $storeid = $_SESSION['cart-storeid'];
+            }
+        } else {
+            $storeid = 0;
+        }
     }
 
     if ($_SESSION['role'] == "customer" ) {
@@ -26,16 +37,13 @@
             /* [ADD ITEM TO CART] */
             case "add":
 
-                // Initialize to an empty cart
-                if(!isset($_SESSION['cart'])) {
-                    $_SESSION['cart'] = array();
-                }
+                
                 if(isset($_SESSION['cart'][$medid])) {
                     $_SESSION['cart'][$medid] = $_SESSION['cart'][$medid] + $_POST["quantity"];
                 } else {
                     $_SESSION['cart'][$medid] = $_POST["quantity"];
                 }
-                $_SESSION['cart']['storeid'] = $storeid;
+                $_SESSION['cart-storeid'] = $storeid;
                 echo '<script language="javascript">alert("Added to cart!")</script>';
                 break;
         }
@@ -77,7 +85,7 @@
                             ?>
                                     <option value="<?php echo $storerow['store_id'] ?>"
                                         <?php if ($storeid == $storerow['store_id']) echo "selected='selected'";?>
-                                        <?php if(isset($_SESSION['cart'])) echo " disabled ";?>
+                                        <?php if(count($_SESSION['cart']) > 0) echo " disabled ";?>
                                         > <?php echo $storerow["store_name"]?></option>
                             <?php } ?>
                         </select>
