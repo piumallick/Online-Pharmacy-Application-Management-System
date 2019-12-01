@@ -3,10 +3,10 @@
 include "includes.php"; // Contain all necessary include files
 
 if ($_SESSION['role'] == "S" || $_SESSION['role'] == "M") {
-    $query="SELECT order_id ,order_date ,store.store_name ,customer.first_name ,customer.last_name ,(SELECT sum(`total_amt`) FROM `order_items` WHERE order_id=orders.order_id) AS order_total FROM `orders` orders ,`customers` customer ,`store` store ,`staff` staff where customer.cust_id = orders.cust_id and store.store_id = orders.store_id and staff.store_id=orders.store_id and staff.staff_id = ".$_SESSION["user_id"].";"; 
+    $query="SELECT order_id ,order_date ,store.store_name ,customer.first_name ,customer.last_name ,(SELECT sum(`total_amt`) FROM `order_items` WHERE order_id=orders.order_id) AS order_total FROM `orders` orders ,`customers` customer ,`store` store ,`staff` staff where customer.cust_id = orders.cust_id and store.store_id = orders.store_id and staff.store_id=orders.store_id and staff.staff_id = ".$_SESSION["user_id"]." ORDER BY order_date DESC;"; 
 }
 else {
-    $query="SELECT order_id ,order_date ,store.store_name ,customer.first_name ,customer.last_name ,(SELECT sum(`total_amt`) FROM `order_items` WHERE order_id=orders.order_id) AS order_total FROM `orders` orders ,`customers` customer ,`store` store where customer.cust_id = orders.cust_id and store.store_id = orders.store_id and orders.cust_id =".$_SESSION["user_id"].";";
+    $query="SELECT order_id ,order_date ,store.store_name ,customer.first_name ,customer.last_name ,(SELECT sum(`total_amt`) FROM `order_items` WHERE order_id=orders.order_id) AS order_total FROM `orders` orders ,`customers` customer ,`store` store where customer.cust_id = orders.cust_id and store.store_id = orders.store_id and orders.cust_id =".$_SESSION["user_id"]." ORDER BY order_date DESC;";
 }
 
 ?>
