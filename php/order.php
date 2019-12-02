@@ -14,48 +14,47 @@ include("includes.php"); // Contain all necessary include files
         <link rel="stylesheet" href="../css/style.css" />
     </head>
     <?php
-    $fetch_order = "select * from orders where cust_id=".$_SESSION['cust_id'];
+        $fetch_order = "select * from orders where cust_id=".$_SESSION['cust_id'];
 
-echo $insert_stock
+/*      echo $insert_stock;
 
-if (mysqli_query($con, $insert_stock)) {
+        if (mysqli_query($con, $insert_stock)) {
 
-    $stock_id = mysqli_insert_id($con);
-    
-    if ($medicine1 != "") {
-        
-        $insert_has_stock_supply1 = "INSERT INTO HAS_STOCK_SUPPLY(stock_id, supplier_id, unit_cost_price, medicine_id,manufacture_date, expiry_date, quantity, total_cost) VALUES(".$stock_id.", ".$supplier.", ".$unit_cost_price1.", ".$medicine_id1.", ".$manufacture_date1.", ".$expiry_date1.", ".$quantity1.", ".$total_cost1.")";
-        
-        mysqli_query($con, $insert_has_stock_supply1);
+            $stock_id = mysqli_insert_id($con);
 
+            if ($medicine1 != "") {
 
+                $insert_has_stock_supply1 = "INSERT INTO HAS_STOCK_SUPPLY(stock_id, supplier_id, unit_cost_price, medicine_id,manufacture_date, expiry_date, quantity, total_cost) VALUES(".$stock_id.", ".$supplier.", ".$unit_cost_price1.", ".$medicine_id1.", ".$manufacture_date1.", ".$expiry_date1.", ".$quantity1.", ".$total_cost1.")";
+
+                mysqli_query($con, $insert_has_stock_supply1);
 
 
+            }
 
-
+        }*/
+?>
 
 
     <body>
-
+        
         <div class="form">
 
             <?php include("nav_menu.php"); ?>
 
-                <div>
+            <div>
 
-                    <h1> (cust_name ) order history</h1>
-                    <!-- INSERT YOUR HTML CODE AFTER THIS LINE -->
+                <h1> (cust_name ) order history</h1>
+                  
+                    <table>
                     <?php
                     
-                    <?php
-                    
-		    $query="SELECT * FROM CUSTOMERS WHERE cust_id =".$new_customer.";";
+                        $query="SELECT * FROM CUSTOMERS WHERE cust_id =".$new_customer.";";
 		   
-		    //echo $query;
-		    $result = mysqli_query($con, $query);
-		    while($row = mysqli_fetch_assoc($result)) { ?>
+                        //echo $query;
+                        $result = mysqli_query($con, $query);
+                        while($row = mysqli_fetch_assoc($result)) { ?>
                     
-		    <tr>
+		          <tr>
                         <td align="center">
                             <?php echo $row["cust_id"]; ?>
                         </td>
@@ -115,6 +114,7 @@ if (mysqli_query($con, $insert_stock)) {
                     <br />
                     <br />
                     <br />
+            </table>
                 </div>
         </div>
     </body>

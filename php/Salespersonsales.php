@@ -1,7 +1,7 @@
 <?php
 
-//include("includes.php"); // Contain all necessary include files 
-include("db.php");
+include("includes.php"); // Contain all necessary include files 
+//include("db.php");
 ?>
 
 <!DOCTYPE html>
@@ -16,18 +16,17 @@ include("db.php");
     </head>
 
     <body>
+        <div class="menu"> <?php include("nav_menu.php"); ?> </div>
     	<div class="form">
 
-               <?php include("nav_menu.php"); ?>
-
     		          <h1> Total Sales by Salesperson in each store: </h1>
-                      <h2 align="center"><a href="viewstats.php">Back to Statistics page</a></h2>
+                      <h2 align="right"><a href="viewstats.php">Back to Statistics page</a></h2>
             
         <div class="msg">  <?php echo $msg; ?> </div>
 
 
             <font size="3" >
-            <table width="50%" border="1" style="border-collapse:collapse;">
+            <table width="100%" border="1" style="border-collapse:collapse;">
                 <thead>
                     <tr>
                         
@@ -63,17 +62,17 @@ include("db.php");
                     
                     <tr>
                         
-                       <td align="left">
+                       <td align="right" style="padding-right: 10px" >
                             <?php echo $row["store_name"]; ?>
                         </td>  
-                        <td align="left">
+                        <td align="right" style="padding-right: 10px" >
                             <?php echo $row["first_name"]; ?>
                         </td>
-                        <td align="left">
+                        <td align="right" style="padding-right: 10px" >
                             <?php echo $row["last_name"]; ?>
                         </td>
                         <td align="center">
-                            <?php echo $row["total_amt"]; ?>
+                            <?php echo "$".number_format($row["total_amt"], 2, '.', ','); ?>
                         </td>
                         
                     </tr>

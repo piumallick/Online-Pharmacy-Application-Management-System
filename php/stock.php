@@ -200,7 +200,7 @@ if (mysqli_query($con, $insert_stock)) {
 }
 
 else{
-    echo "Please enter the inventory details ... You may add upto 5 items at a time!";
+    $msg = "Please Enter the inventory details ... You may add upto 5 items at a time!";
 }
 
 ?>
@@ -218,10 +218,8 @@ else{
     </head>
 
     <body>
-
+       <div class="menu"> <?php include("nav_menu.php"); ?> </div>
         <div class="form">
-
-            <?php include("nav_menu.php"); ?>
 
                 <div>
 
@@ -231,6 +229,7 @@ else{
 			<div class="error_msg">
 			    <?php echo $error_msg; ?>
 			</div>
+             <div class="msg"> <p><?php echo $msg; ?></p> </div>
             <table>
                 <tr>
                 <td colspan="5">
@@ -261,13 +260,13 @@ else{
                         <?php } ?>
                   </select>
                 </td>
-                <td><input type="text" name="unit_cost_price1" placeholder="Enter Unit Price"   /></td>
+                <td><input type="text" name="unit_cost_price1" placeholder="Unit Price"   /></td>
 
-                <td><input type="text" name="manufacture_date1" placeholder="Enter Manufacturer Date YYYY-MM-DD"   /></td>
+                <td><input type="text" name="manufacture_date1" placeholder="Manufacturer Date YYYY-MM-DD"   /></td>
 
-                <td><input type="text" name="expiry_date1" placeholder="Enter Expiry Date YYYY-MM-DD"   /></td>
+                <td><input type="text" name="expiry_date1" placeholder="Expiry Date YYYY-MM-DD"   /></td>
 
-                <td><input type="text" name="quantity1" placeholder="Enter Quantity"   /></td>
+                <td><input type="text" name="quantity1" placeholder="Quantity"   /></td>
 
                
             </tr>
@@ -286,13 +285,13 @@ else{
                         <?php } ?>
                   </select>
                 </td>
-                <td><input type="text" name="unit_cost_price2" placeholder="Enter Unit Price"   /></td>
+                <td><input type="text" name="unit_cost_price2" placeholder="Unit Price"   /></td>
 
-                <td><input type="text" name="manufacture_date2" placeholder="Enter Manufacturer Date YYYY-MM-DD"   /></td>
+                <td><input type="text" name="manufacture_date2" placeholder="Manufacturer Date YYYY-MM-DD"   /></td>
 
-                <td><input type="text" name="expiry_date2" placeholder="Enter Expiry Date YYYY-MM-DD"   /></td>
+                <td><input type="text" name="expiry_date2" placeholder="Expiry Date YYYY-MM-DD"   /></td>
 
-                <td><input type="text" name="quantity2" placeholder="Enter Quantity"   /></td>
+                <td><input type="text" name="quantity2" placeholder="Quantity"   /></td>
 
                
             </tr>
@@ -311,13 +310,13 @@ else{
                         <?php } ?>
                   </select>
                 </td>
-                <td><input type="text" name="unit_cost_price3" placeholder="Enter Unit Price"   /></td>
+                <td><input type="text" name="unit_cost_price3" placeholder="Unit Price"   /></td>
 
-                <td><input type="text" name="manufacture_date3" placeholder="Enter Manufacturer Date YYYY-MM-DD"   /></td>
+                <td><input type="text" name="manufacture_date3" placeholder="Manufacturer Date YYYY-MM-DD"   /></td>
 
-                <td><input type="text" name="expiry_date3" placeholder="Enter Expiry Date YYYY-MM-DD"   /></td>
+                <td><input type="text" name="expiry_date3" placeholder="Expiry Date YYYY-MM-DD"   /></td>
 
-                <td><input type="text" name="quantity3" placeholder="Enter Quantity"   /></td>
+                <td><input type="text" name="quantity3" placeholder="Quantity"   /></td>
 
                
             </tr>
@@ -336,13 +335,13 @@ else{
                         <?php } ?>
                   </select>
                 </td>
-                <td><input type="text" name="unit_cost_price4" placeholder="Enter Unit Price"   /></td>
+                <td><input type="text" name="unit_cost_price4" placeholder="Unit Price"   /></td>
 
-                <td><input type="text" name="manufacture_date4" placeholder="Enter Manufacturer Date YYYY-MM-DD"   /></td>
+                <td><input type="text" name="manufacture_date4" placeholder="Manufacturer Date YYYY-MM-DD"   /></td>
 
-                <td><input type="text" name="expiry_date4" placeholder="Enter Expiry Date YYYY-MM-DD"   /></td>
+                <td><input type="text" name="expiry_date4" placeholder="Expiry Date YYYY-MM-DD"   /></td>
 
-                <td><input type="text" name="quantity4" placeholder="Enter Quantity"   /></td>
+                <td><input type="text" name="quantity4" placeholder="Quantity"   /></td>
 
                
             </tr>  
@@ -360,13 +359,13 @@ else{
                         <?php } ?>
                   </select>
                 </td>
-                <td><input type="text" name="unit_cost_price5" placeholder="Enter Unit Price"   /></td>
+                <td><input type="text" name="unit_cost_price5" placeholder="Unit Price"   /></td>
 
-                <td><input type="text" name="manufacture_date5" placeholder="Enter Manufacturer Date YYYY-MM-DD"   /></td>
+                <td><input type="text" name="manufacture_date5" placeholder="Manufacturer Date YYYY-MM-DD"   /></td>
 
-                <td><input type="text" name="expiry_date5" placeholder="Enter Expiry Date YYYY-MM-DD"   /></td>
+                <td><input type="text" name="expiry_date5" placeholder="Expiry Date YYYY-MM-DD"   /></td>
 
-                <td><input type="text" name="quantity5" placeholder="Enter Quantity"   /></td>
+                <td><input type="text" name="quantity5" placeholder="Quantity"   /></td>
 
                
             </tr>

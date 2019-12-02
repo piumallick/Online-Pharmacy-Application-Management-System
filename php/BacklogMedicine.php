@@ -1,7 +1,7 @@
 <?php
 
-//include("includes.php"); // Contain all necessary include files 
-include("db.php");
+include("includes.php"); // Contain all necessary include files 
+//include("db.php");
 ?>
 
 <!DOCTYPE html>
@@ -16,9 +16,8 @@ include("db.php");
     </head>
 
     <body>
+        <div class="menu"> <?php include("nav_menu.php"); ?> </div>
     	<div class="form">
-
-            <?php include("nav_menu.php"); ?>
 
     		   <h1> Medicine Backlog (Medicines which are  in store for > 1 year) </h1>
                <h2 align="right"><a href="viewstats.php">Back to Statistics page</a></h2>

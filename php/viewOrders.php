@@ -22,63 +22,48 @@ else {
     </head>
 
     <body>
-
+        <div class="menu"> <?php include("nav_menu.php"); ?> </div>
         <div class="form">
+            <h1>  Orders </h1>
+            <table width="100%" border="1" style="border-collapse:collapse;">
+                <thead>
+                    <tr>
+                        <th><strong>Customer Name</strong></th>
+                        <th><strong>Order ID</strong></th>
+                        <th><strong>Order Date</strong></th>
+                        <th><strong>Store Name</strong></th>
+                        <th><strong>Total Amount</strong></th>
+                    </tr>
+                </thead>
 
-            <?php include "nav_menu.php";
-            ?>
+                <tbody>
+                    <?php
+                        // Define the query
 
-            <div>
-
-                <h1>
-                    Orders
-                </h1>
-
-                <!-- INSERT YOUR HTML CODE AFTER THIS LINE -->
-                <div>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th><strong>Customer Name</strong></th>
-                                <th><strong>Order ID</strong></th>
-                                <th><strong>Order Date</strong></th>
-                                <th><strong>Store Name</strong></th>
-                                <th><strong>Total Amount</strong></th>
-                            </tr>
-                        </thead>
-    
-                        <tbody>
-                            <?php
-                                // Define the query
-                                        
-                                // Now execute the query
-                                $result = mysqli_query($con, $query);
-                                while($row = mysqli_fetch_assoc($result)) { 
-                            ?>
-
-                            <tr>
-                                <td align="center">
-                                    <?php echo $row["first_name"];?> <?php echo $row["last_name"]; ?>
-                                </td>
-                                <td align="center">
-                                    <a href="viewOrderDetail.php?orderid=<?php echo $row["order_id"]; ?>">Order Id - <?php echo $row["order_id"]; ?></a>
-                                </td>                                
-                                <td align="center">
-                                    <?php echo $row["order_date"];?> 
-                                </td>
-                                <td align="center">
-                                    <?php echo $row["store_name"];?> 
-                                </td>
-                                <td align="center">
-                                    <?php echo $row["order_total"];?> 
-                                </td>
-                            </tr>
-                            <?php } ?>
-                        </tbody>
-                    </table>
-                </div>
-                <!-- INSERT YOUR HTML CODE BEFORE THIS LINE -->
-            </div>
+                        // Now execute the query
+                        $result = mysqli_query($con, $query);
+                        while($row = mysqli_fetch_assoc($result)) { 
+                    ?>
+                    <tr>
+                        <td align="center">
+                            <?php echo $row["first_name"];?> <?php echo $row["last_name"]; ?>
+                        </td>
+                        <td align="center">
+                            <a href="viewOrderDetail.php?orderid=<?php echo $row["order_id"]; ?>">Order Id - <?php echo $row["order_id"]; ?></a>
+                        </td>                                
+                        <td align="center">
+                            <?php echo $row["order_date"];?> 
+                        </td>
+                        <td align="center">
+                            <?php echo $row["store_name"];?> 
+                        </td>
+                        <td align="center">
+                            <?php echo "$".number_format($row["order_total"], 2, '.', ','); ?> 
+                        </td>
+                    </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
         </div>
     </body>
 </html>

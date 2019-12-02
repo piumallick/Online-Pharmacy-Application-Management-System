@@ -1,14 +1,13 @@
 <?php
 
-//include("includes.php"); // Contain all necessary include files 
+include("includes.php"); // Contain all necessary include files 
 
-include("db.php");
+//include("db.php");
 ?>
 
 
 <!DOCTYPE html>
 <html>
-<img src="/images/Statistics.png" width="280" height="125" align="right" />
 
     <head>
         <meta charset="utf-8">
@@ -19,8 +18,10 @@ include("db.php");
     </head>
 
     <body>
+        <div class="menu"> <?php include("nav_menu.php"); ?> </div>
     	<div class="form">
-
+            <img src="/images/Statistics.png" width="280" height="125" align="right" />
+            
     		<h1><u> View Statistics for all the stores </u></h1>
     		
     		<br><br>
@@ -44,8 +45,8 @@ include("db.php");
     		<h2> 5. Total Sales done by all salesperson in each store: <a href="Salespersonsales.php">Click here for the report </a> </h2>
     		
             <h2> 6. Total Sales comparison in all the stores: <a href="SalesComparison.php">Click here for the report </a> </h2>
-
-
+        
+        </div>    
 
     </body>
 

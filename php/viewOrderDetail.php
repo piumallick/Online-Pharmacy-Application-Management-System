@@ -23,18 +23,14 @@ else {
     </head>
 
     <body>
-
+        <div class="menu"> <?php include("nav_menu.php"); ?> </div> 
         <div class="form">
-
-            <?php include("nav_menu.php"); ?>
-
-                <div>
+               <div>
 
                     <h1> View Order Details - <?php echo $orderid ?></h1>
 
-                    <!-- INSERT YOUR HTML CODE AFTER THIS LINE -->
                     <div>
-                    <table>
+                    <table width="100%" border="1" style="border-collapse:collapse;">
                         <thead>
                             <tr>
                                 <th><strong>Order ID</strong></th>
@@ -73,22 +69,22 @@ else {
                                     </td>
                                 <?php } ?>
                                 <td align="center">
-                                    <?php echo $row["unit_selling_price"];?> 
+                                    <?php echo "$".number_format($row["unit_selling_price"], 2, '.', ','); ?> 
                                 </td>
                                 <td align="center">
                                     <?php echo $row["quantity"];?> 
                                 </td>
                                 <td align="center">
-                                    <?php echo $row["total_amt"];?> 
+                                    <?php echo "$".number_format($row["total_amt"], 2, '.', ','); ?> 
                                 </td>
                             </tr>
                             <?php $orderTotal = $orderTotal + $row["total_amt"]; } ?>
                             <tr>
-                                <td colspan="5" align="right">
+                                <td colspan="6" align="right">
                                     <strong> Grand Total:    </strong>                       
                                 </td>
-                                <td>
-                                    <strong> <?php echo $orderTotal ?> </strong>  
+                                <td align="center">
+                                    <strong> <?php echo "$".number_format($orderTotal, 2, '.', ','); ?> </strong>  
                                 </td>
                             </tr>
                         </tbody>

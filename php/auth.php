@@ -36,7 +36,7 @@
   	
     $have_access = FALSE;
 
-    echo "role: ".$role;
+    //echo "role: ".$role;
     
     if ($role == "guest") {
 	$have_access = in_array($cur_page, $guest); 

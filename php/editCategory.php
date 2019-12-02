@@ -57,7 +57,7 @@ if ( isset($_REQUEST['form_action']) ) {
    
     $query = "SELECT * FROM CATEGORY WHERE category_id=".$_GET['category_id'];
         
-    echo "SQL: ".$query;
+    //echo "SQL: ".$query;
         
     if ($result = mysqli_query($con, $query)) {
             

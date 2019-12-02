@@ -7,7 +7,7 @@ $cartMessage = "Your cart is empty";
 if(!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = array();
 } else {
-    echo count($_SESSION['cart']);
+    $cartMessage = "Your cart is empty";
 }
 
 // Code to handle cart add button action
@@ -88,12 +88,9 @@ if(!empty($_GET["action"])) {
     </head>
 
     <body>
-
+        <div class="menu"> <?php include("nav_menu.php"); ?> </div>
         <div class="form">
-
-            <?php include("nav_menu.php"); ?>
-
-                <div>
+        <div>
                     <h1> View or Edit Cart </h1>
 
                     <!-- INSERT YOUR HTML CODE AFTER THIS LINE -->
@@ -102,7 +99,7 @@ if(!empty($_GET["action"])) {
                         if(count($_SESSION['cart']) > 0) {
                     ?>
                     <form method="post" action="cart.php">
-                        <table>
+                        <table width="100%" border="1" style="border-collapse:collapse;">
                             <thead>
                                 <tr>
                                     <th><strong>Medicine ID</strong></th>
@@ -133,13 +130,13 @@ if(!empty($_GET["action"])) {
                                                 <?php echo $row["medicine_name"]; ?>
                                             </td>
                                             <td align="center">
-                                                <?php echo $row["unit_selling_price"]; ?>
+                                                <?php echo "$".number_format($row["unit_selling_price"], 2, '.', ','); ?>
                                             </td>
                                             <td align="center">
-                                                <?php echo $quantity; ?>
+                                                <?php echo $quantity ?>
                                             </td>
                                             <td align="center">
-                                                <?php echo $lineTotal ; ?>
+                                                <?php echo "$".number_format($lineTotal, 2, '.', ','); ?>
                                             </td>
                                             <td align="center">
                                                 <a href="cart.php?action=delete&medid=<?php echo $medicineId; ?>">Delete</a>
@@ -147,11 +144,11 @@ if(!empty($_GET["action"])) {
                                         </tr>
                                 <?php } } ?>
                                 <tr>
-                                    <td colspan="5" align="right">
+                                    <td colspan="4" align="right">
                                         <strong> Grand Total:    </strong>                       
                                     </td>
-                                    <td>
-                                        <strong> <?php echo $orderTotal; $_SESSION['cart-ordertotal'] = $orderTotal ?> </strong>  
+                                    <td align="center">
+                                        <strong> <?php echo "$".$orderTotal; $_SESSION['cart-ordertotal'] = $orderTotal ?> </strong>  
                                     </td>
                                 </tr>
                             </tbody>

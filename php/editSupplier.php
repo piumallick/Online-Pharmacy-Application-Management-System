@@ -56,8 +56,6 @@ if ( isset($_REQUEST['form_action']) ) {
    
     $query = "SELECT * FROM SUPPLIER WHERE supplier_id=".$_GET['the_supplier_id'];
         
-    echo "SQL: ".$query;
-        
     if ($result = mysqli_query($con, $query)) {
             
         $row = mysqli_fetch_array($result);

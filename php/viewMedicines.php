@@ -48,14 +48,12 @@ if (isset($_GET['show'])) {
     </head>
 
     <body>
-
+        <div class="menu"> <?php include("nav_menu.php"); ?> </div>
         <div class="form">
-
-            <?php include("nav_menu.php"); ?>
 
             <h1> List Medicines </h1>
             
-	    <div class="msg"> <p><?php echo $msg; ?></p> </div>
+            <div class="msg"> <p><?php echo $msg; ?></p> </div>
 
             <table width="100%" border="1" style="border-collapse:collapse;">
                 <thead>

@@ -9,20 +9,19 @@ echo $store_id;
 if (isset($_GET['show'])) {
 	
     //echo "No Results";
-    $query="SELECT
-    HAS_STORE_STOCK.stock_id,
-    HAS_STORE_STOCK.medicine_id,
-    MEDICINE.medicine_name,
-    MEDICINE.medicine_desc,
-    HAS_STORE_STOCK.unit_selling_price,
-     HAS_STORE_STOCK.availability_of_medicine
-   
-FROM
-    HAS_STORE_STOCK, MEDICINE
-WHERE
-	HAS_STORE_STOCK.medicine_id = MEDICINE.medicine_id AND
-    HAS_STORE_STOCK.availability_of_medicine > 0 ";
-    // AND HAS_STORE_STOCK.store_id =".$store_id;
+    $avail_query="SELECT
+                        HAS_STORE_STOCK.stock_id,
+                        HAS_STORE_STOCK.medicine_id,
+                        MEDICINE.medicine_name,
+                        MEDICINE.medicine_desc,
+                        HAS_STORE_STOCK.unit_selling_price,
+                        HAS_STORE_STOCK.availability_of_medicine
+                    FROM
+                        HAS_STORE_STOCK, MEDICINE
+                    WHERE
+                        HAS_STORE_STOCK.medicine_id = MEDICINE.medicine_id AND
+                        HAS_STORE_STOCK.availability_of_medicine > 0 
+                        AND HAS_STORE_STOCK.store_id =".$store_id;
 
 //Need code to add to cart
 // } elseif (isset($_SESSION['cust_id'])) {
@@ -53,33 +52,35 @@ WHERE
     </head>
 
     <body>
-
         <div class="form">
 
             <?php include("nav_menu.php"); ?>
 
             <h1> List of Available Medicines </h1>
             
-	    <div class="msg"> <p><?php echo $msg; ?></p> </div>
-         <table>
-           <tr>
-                <td colspan="5">
+            <div class="msg"> <p><?php echo $msg; ?></p> </div>
+            <table>
+            <tr>
+                <td>
                     <select class="select" name="store">
-                                  <option value="">Select Store...</option>
-                                  <?php $query = "SELECT store_id, store_name FROM STORE";
-                                      $result = mysqli_query($con, $query);
-                                               while($row = mysqli_fetch_assoc($result)) {
+                        <option value="">Select Store...</option>
+                        <?php $query = "SELECT store_id, store_name FROM STORE";
+                            $result = mysqli_query($con, $query);
+                            
+                            while($row = mysqli_fetch_assoc($result)) {
                         ?>
-                              <option value="<?php echo $row['store_id'] ?>"> <?php echo $row["store_name"]?></option>
-                                                
+                            <option <?php if ($row['store_id'] == $store_id ) echo 'selected'; ?> value="<?php echo $row['store_id'] ?>"> 
+                                <?php echo $row["store_name"]?>
+                            </option>
+
                         <?php }
-                         $form_action = $_SESSION['form_action'];
-                        echo $form_action
+                            $form_action = $_SESSION['form_action'];
+                            //echo $form_action
                         ?>
                     </select>
                 </td>
-                </tr>
-         </table>
+            </tr>
+            </table>
 
             <table width="100%" border="1" style="border-collapse:collapse;">
                 <thead>
@@ -94,11 +95,13 @@ WHERE
                 </thead>
             <tbody>
                 <?php
-
-                  //echo $query;
+                    
+                  //echo $avail_query;
                   $form_action = "edit";
-                  $result = mysqli_query($con, $query);
-                  while($row = mysqli_fetch_assoc($result)) { ?>
+                  $result = mysqli_query($con, $avail_query);
+                  $count = 1;
+                  while($row = mysqli_fetch_assoc($result)) {   $count++; ?>
+                        
                         <tr>
                             <td align="center">
                                 <?php echo $row["medicine_name"]; ?>
@@ -125,7 +128,10 @@ WHERE
                             </td>
 
                         </tr>
-                    <?php } ?>
+                    <?php }  
+                    echo $count; ?>
+                <tr><input type="hidden" name="form_action" value=“insert”/></tr>            
+                <tr> <td colspan="5" ><input name="submit" type="submit" value="Submit" /></td></tr>
                 </tbody>
             </table>
                     

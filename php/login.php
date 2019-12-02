@@ -87,7 +87,7 @@ if (isset($_POST['email'])) {
 
 <body>
 
-    <div class="form">
+    <div class="login_form">
 
 			<h1>Log In</h1>
 			<form action="" method="post" name="login">
@@ -98,7 +98,7 @@ if (isset($_POST['email'])) {
 				</select>
 
 				<input type="text" name="email" placeholder="Email" required />
-				<input type="password" name="password" placeholder="Password" required />
+				<input type="password" name="password" placeholder="Password" required /><br />
 				<input name="submit" type="submit" value="Login" />
 			</form>
 

@@ -21,7 +21,7 @@
     }
 
     if ($_SESSION['role'] == "customer" ) {
-        $query="SELECT `medicine`.`medicine_id`,`medicine`.`medicine_name`, `medicine`.`medicine_desc`,`has_store_stock`.`store_id`,`has_store_stock`.`availability_of_medicine`,`has_store_stock`.`unit_selling_price`FROM `medicine` , `has_store_stock` where medicine.medicine_id=has_store_stock.medicine_id and `has_store_stock`.`availability_of_medicine`>1 and `has_store_stock`.`store_id` = ".$storeid.";";
+        $query="SELECT `medicine`.`medicine_id`,`medicine`.`medicine_name`, `medicine`.`medicine_desc`,`has_store_stock`.`store_id`,`has_store_stock`.`availability_of_medicine`,   FORMAT(`has_store_stock`.`unit_selling_price`, 2) AS unit_selling_price FROM `medicine` , `has_store_stock` WHERE medicine.medicine_id=has_store_stock.medicine_id and `has_store_stock`.`availability_of_medicine`>1 and `has_store_stock`.`store_id` = ".$storeid.";";
     }
 
     // Code to handle cart add button action
@@ -62,10 +62,9 @@
     </head>
 
          <body>      
+            <div class="menu"> <?php include("nav_menu.php"); ?> </div> 
             <div class="form">
                 
-                <?php include "nav_menu.php";
-                ?>
                 <div>
                     <br>
                     <h1>
@@ -97,8 +96,7 @@
                     <?php
                         if($storeid > 0) {
                     ?>
-                        <div>
-                            <table>
+                            <table width="100%" border="1" style="border-collapse:collapse;">
                                 <thead>
                                     <tr>
                                         <th><strong>Medicine ID</strong></th>
@@ -106,6 +104,7 @@
                                         <th><strong>Medicine Description</strong></th>
                                         <th><strong>Unit Price</strong></th>
                                         <th><strong>Quantity Available</strong></th>
+                                        <th><strong>Order Amount </strong></th>
                                         <th><strong>Add to cart</strong></th>
                                     </tr>
                                 </thead>
@@ -127,13 +126,15 @@
                                                     <?php echo $row["medicine_desc"]; ?>
                                                 </td>
                                                 <td align="center">
-                                                    <?php echo $row["unit_selling_price"]; ?>
+                                                    <?php echo "$".$row["unit_selling_price"]; ?>
                                                 </td>
                                                 <td align="center">
                                                     <?php echo $row["availability_of_medicine"]; ?>
                                                 </td>
                                                 <td align="center">
                                                     <input type="number" max="<?php echo $row["availability_of_medicine"]; ?>" maxclass="medicine-quanity" name="quantity" value="1" size="1" />
+                                                </td>
+                                                <td align="center">
                                                     <input type="submit" value="Add to Cart" class="btnAddAction" />
                                                 </td>
                                             </tr>
@@ -141,12 +142,9 @@
                                     <?php } ?>
                                 </tbody>
                             </table>
-                        </div>
                     <?php } ?>
-                    <!-- INSERT YOUR HTML CODE BEFORE THIS LINE -->
                 </div>
             </div>
-        </div>
     </body>
 </html>
 

@@ -18,8 +18,9 @@ include("includes.php"); // Contain all necessary include files
 </head>
 
 <body>
+    <div class="menu"> <?php include("nav_menu.php"); ?> </div>
     <div class="form">
-        <?php include("nav_menu.php"); ?>
+       
             <p>Welcome
                 <?php echo $_SESSION['fname']." ".$_SESSION['lname']; ?>!</p>
             <p>This is secure area.</p>

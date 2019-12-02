@@ -3,8 +3,7 @@
 include("includes.php"); // Contain all necessary include files 
 
 if (isset($_GET['show'])) {
-	
-    echo "No Results";
+
     $query="SELECT * FROM SUPPLIER";
     
 } elseif (isset($_SESSION['the_supplier_id'])) {
@@ -36,11 +35,8 @@ if (isset($_GET['show'])) {
     </head>
 
     <body>
-
+        <div class="menu"> <?php include("nav_menu.php"); ?> </div>
         <div class="form">
-
-            <?php include("nav_menu.php"); ?>
-
             <h1> List Suppliers </h1>
             
 	        <div class="msg"> <p><?php echo $msg; ?></p> </div>
