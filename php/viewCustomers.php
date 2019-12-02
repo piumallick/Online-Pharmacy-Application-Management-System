@@ -1,7 +1,7 @@
 <?php
 
 include("includes.php"); // Contain all necessary include files 
-
+$msg = "";
 if (isset($_GET['show'])) {
 	
     $query="SELECT * FROM CUSTOMERS";

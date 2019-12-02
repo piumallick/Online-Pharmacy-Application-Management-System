@@ -80,9 +80,15 @@ else {
                             </tr>
                             <?php $orderTotal = $orderTotal + $row["total_amt"]; } ?>
                             <tr>
-                                <td colspan="6" align="right">
+                                <?php if ($_SESSION['role'] == "S" || $_SESSION['role'] == "M") { ?>
+                                   <td colspan="6" align="right">
                                     <strong> Grand Total:    </strong>                       
-                                </td>
+                                   </td>
+                                <?php }  else { ?>
+                                   <td colspan="5" align="right">
+                                    <strong> Grand Total:    </strong>                       
+                                   </td>                                
+                                <?php } ?>
                                 <td align="center">
                                     <strong> <?php echo "$".number_format($orderTotal, 2, '.', ','); ?> </strong>  
                                 </td>

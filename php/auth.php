@@ -10,14 +10,14 @@
 
     $customer =  array("dashboard","index", "searchMeds","cart","orderMeds","viewMeds", "viewOrders", "viewOrderDetail");
     
-    $salesperson =  array("dashboard", "index", "searchMeds", "orderMeds", "processOrders", 
+    $salesperson =  array("dashboard", "index", "viewMeds", "orderMeds",
                           "customer", "viewCustomers", "editCustomer", 
                           "category", "viewCategories", "editCategory", 
                           "medicine", "viewMedicines", "editMedicine", 
                           "stock", "viewStocks", "viewOrderDetail",
                           "order", "viewOrders", "viewStoreStocks", "storeStockItems" );
     
-    $manager =  array("dashboard", "index", "searchMeds", "orderMeds", "processOrders", 
+    $manager =  array("dashboard", "index", "viewMeds", "orderMeds", 
                       "customer", "viewCustomers", "editCustomer", 
                       "category", "viewCategories", "editCategory", 
                       "medicine", "viewMedicines", "editMedicine", 
