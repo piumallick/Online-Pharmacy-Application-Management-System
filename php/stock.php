@@ -220,11 +220,9 @@ else{
     <body>
        <div class="menu"> <?php include("nav_menu.php"); ?> </div>
         <div class="form">
-
                 <div>
-
-                    <h1> <!-- Insert Page Name Here --> </h1>
-                    <form name="form" method="post" action=""> 
+               <h1> Add Stock </h1>
+            <form name="form" method="post" action=""> 
 			
 			<div class="error_msg">
 			    <?php echo $error_msg; ?>

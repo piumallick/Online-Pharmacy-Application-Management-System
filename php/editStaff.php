@@ -89,7 +89,7 @@ if ( isset($_REQUEST['form_action']) ) {
 <html>
     <head>
         <meta charset="utf-8">
-        <title>	Edit Customer </title>
+        <title>	Edit Staff Information </title>
         <link rel="stylesheet" href="../css/style.css" />
     </head>
     <body> 
@@ -97,7 +97,7 @@ if ( isset($_REQUEST['form_action']) ) {
        
         <div class="form">
             
-		    <h1> Edit Customer </h1>
+		    <h1> Edit Staff Information </h1>
 			
 		    <form name="form" method="post" action=""> 
 			

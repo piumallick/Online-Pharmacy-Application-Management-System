@@ -27,12 +27,11 @@
 ?>
    <p>  
 	<a href="index.php">Index</a> | 
-    <a href="viewMeds.php">Available Medicines</a>|
 	<a href="customer.php">Add Customer</a> | 
 	<a href="viewCustomers.php?show=all">View Customers</a> | 
     <a href="category.php">Add Category</a> | 
 	<a href="viewCategories.php?show=all">View Categories</a> | 
-    <a href="medicine.php">Medicine Info</a> | 
+    <a href="medicine.php">Add Medicine Info</a> | 
 	<a href="viewMedicines.php?show=all">View Medicines</a> | 
 	<a href="stock.php">Add Stock</a> | 
 	<a href="viewStocks.php?show=all">View Stocks</a> | 
@@ -48,7 +47,6 @@
 ?>
    <p>   
 	<a href="index.php">Index</a> | 
-    <a href="viewMeds.php">Available Medicines</a>|
 	<a href="customer.php">Add Customer</a> | 
 	<a href="viewCustomers.php?show=all">View Customers</a> | 
     <a href="category.php">Add Category</a> | 

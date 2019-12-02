@@ -21,10 +21,14 @@ include("includes.php"); // Contain all necessary include files
     <div class="menu"> <?php include("nav_menu.php"); ?> </div>
     <div class="form">
        
-            <p>Welcome
-                <?php echo $_SESSION['fname']." ".$_SESSION['lname']; ?>!</p>
-            <p>This is secure area.</p>
-
+        <p> <h2> Welcome <?php echo $_SESSION['fname']." ".$_SESSION['lname']; ?>! </h2> </p>
+            
+            <?php if ($_SESSION['role'] == "S" || $_SESSION['role'] == "M") { ?>
+                        <h3>  Have a good day of work </h3>
+            <?php } else { ?>
+                         <h3>  Happy Shopping </h3>
+            <?php } ?>
+            
             <br />
             <br />
             <br />

@@ -29,18 +29,16 @@ if (isset($_GET['show'])) {
     <head>
         <meta charset="utf-8">
         <title>
-            List Staff
+            List Store Staff
         </title>
         <link rel="stylesheet" href="../css/style.css" />
     </head>
 
     <body>
-
+        <div class="menu"> <?php include("nav_menu.php"); ?> </div>
         <div class="form">
 
-            <?php include("nav_menu.php"); ?>
-
-            <h1> List Staff </h1>
+            <h1> List Store Staff </h1>
             
 	    <div class="msg"> <p><?php echo $msg; ?></p> </div>
 
