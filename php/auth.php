@@ -29,7 +29,7 @@
                       "annualReport", "availability_giant_eagle", 
                       "availability_cvs", "availability_rite_aid", 
                       "MaxOrders", "BacklogMedicine", 
-                      "LessAvailableMedicine", "Salespersonsales","viewstats");
+                      "LessAvailableMedicine", "Salespersonsales","SalesComparison","viewstats");
 
     $cur_page = basename($_SERVER['SCRIPT_NAME'], ".php");
     $role = $_SESSION["role"];
