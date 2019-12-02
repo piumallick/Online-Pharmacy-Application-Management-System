@@ -26,26 +26,40 @@ a:hover {
     text-decoration: underline;
 }
 
+/*
 table {
-    font-size: smaller; 
+    font-size: small; 
 }
+*/
 
 .form {
-    width: 1000px;
-    align: center;
+    margin: auto;
+    width: 75%;
+    align-content: center;
     font-size: 12px;
+    padding: 10px;
 }
 
+.login_form {
+    margin: auto;
+    width: 300px;
+    align-content: center;
+    font-size: 12px;
+    padding: 10px;
+}
+
+
 .menu {
-    width: 1000px;
-    margin: 0 auto;
-    align: center;
+    margin: auto;
+    width: 75%;
+    border: 1px solid #CCC;
+    padding: 10px;
 }
 
 input[type='text'],
 input[type='email'],
 input[type='password'] {
-    width: 200px;
+    width: 150px;
     border-radius: 2px;
     border: 1px solid #CCC;
     padding: 10px;
@@ -72,7 +86,7 @@ input[type='submit']:hover {
 }
 
 select {
-    width: 200px;
+    width: 175px;
     height: 40px;
     font-size: 14px;
     color: #333;
@@ -83,8 +97,8 @@ select {
     color: #F00;
 }
 
-.medicine-quanity {
-    padding: 5px;
-    width: 30px !important;
-    margin: 10px;
+.multi_select {
+    
+    max-height: 200px;
+    
 }
