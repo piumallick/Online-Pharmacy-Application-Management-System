@@ -8,16 +8,17 @@
     } 
     $guest = array("dashboard", "index", "searchMeds","cart");
 
-    $customer =  array("dashboard","index", "searchMeds","cart","orderMeds","viewMeds", "viewOrders", "viewOrderDetail");
+    $customer =  array("index","cart","orderMeds","viewMeds", "viewOrders", "viewOrderDetail");
     
-    $salesperson =  array("dashboard", "index", "viewMeds", "orderMeds",
+    $salesperson =  array("index", "viewMeds", "orderMeds",
                           "customer", "viewCustomers", "editCustomer", 
                           "category", "viewCategories", "editCategory", 
                           "medicine", "viewMedicines", "editMedicine", 
                           "stock", "viewStocks", "viewOrderDetail",
-                          "order", "viewOrders", "viewStoreStocks", "storeStockItems" );
+                          "order", "viewOrders", "viewStoreStocks", "storeStockItems",
+                         "editStockItem");
     
-    $manager =  array("dashboard", "index", "viewMeds", "orderMeds", 
+    $manager =  array("index", "viewMeds", "orderMeds", 
                       "customer", "viewCustomers", "editCustomer", 
                       "category", "viewCategories", "editCategory", 
                       "medicine", "viewMedicines", "editMedicine", 

@@ -70,8 +70,9 @@ if(mysqli_num_rows($result2) == 0){
                         <th><strong>Date of Expiry </strong></th>
                         <th><strong>Quantity</strong></th>
                         <th><strong>Total Amount </strong></th>
+                         <?php if($flag){ ?>
                         <th><strong>Edit</strong></th>
-                        <th><strong>Delete</strong></th>
+                        <?php }?>  
                     </tr>
                 </thead>
             <tbody>
@@ -86,7 +87,7 @@ if(mysqli_num_rows($result2) == 0){
                                 <?php echo $row["medicine_name"] ; ?>
                             </td>
                             <td align="center">
-                                <?php echo $row["unit_cost_price"]; ?>
+                                <?php echo "$".number_format($row["unit_cost_price"], 2, '.', ','); ?>
                             </td>
                             <td align="center">
                                 <?php echo $row["manufacture_date"]; ?>
@@ -98,18 +99,13 @@ if(mysqli_num_rows($result2) == 0){
                                 <?php echo $row["quantity"]; ?> 
                             </td> 
                             <td align="center">
-                                <?php echo $row["total_cost"]; ?> 
+                                <?php echo "$".number_format($row["total_cost"], 2, '.', ','); ?>
                             </td>   
-                            <td align="center">
                             <?php if($flag){ ?>
+                            <td align="center">
                                <a href="editStockItem.php?stock_id=<?php echo $row['stock_id']; ?>&medicine_id=<?php echo $row['medicine_id']; ?>">Edit</a>
-                            <?php }?>   
                             </td>
-                            <td align="center">
-                            <?php if($flag){ ?>
-                               <a href="deleteStockItem.php?stock_id=<?php echo $row['stock_id']; ?>&medicine_id=<?php echo $row['medicine_id']; ?>">Delete</a>
-                            <?php }?>   
-                            </td>
+                            <?php }?>
                         </tr>
                     <?php } ?>
                 </tbody>

@@ -74,7 +74,7 @@ if ( isset($_REQUEST['form_action']) ) {
     <head>
    
    	<meta charset="utf-8">
-	<title>	Enter Medication </title>
+	<title>	Add Medicine Information </title>
 	<link rel="stylesheet" href="../css/style.css" />
     
     </head>
@@ -84,7 +84,7 @@ if ( isset($_REQUEST['form_action']) ) {
        
         <div class="form">
         
-        <h1> Enter New Medication</h1>
+        <h1> Add Medicine Info</h1>
 			
             <form name="form" method="post" action=""> 
 			

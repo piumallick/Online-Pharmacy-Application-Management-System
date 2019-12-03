@@ -92,7 +92,7 @@ if ( isset($_REQUEST['form_action']) ) {
        
         <div class="form">
         
-        <h1> Create New User</h1>
+        <h1> Create New Customer</h1>
 			
             <form name="form" method="post" action=""> 
 			

@@ -41,7 +41,7 @@ if (isset($_GET['show'])) {
                         <th><strong>Overhead Percentage</strong></th>
                         <th><strong>Total Cost</strong></th>
                         <th><strong>Supplier </strong></th>
-                        <th><strong>Edit</strong></th>
+                        <th><strong>View</strong></th>
                     </tr>
                 </thead>
             <tbody>
@@ -59,12 +59,12 @@ if (isset($_GET['show'])) {
                                 <?php echo $row["overhead_pct"]; ?>
                             </td>
                             <td align="center">
-                                <?php echo $row["total_cost"]; ?>
+                                <?php echo "$".number_format($row["total_cost"], 2, '.', ','); ?>
                             </td>
                             <td align="center">
                                 <?php echo $row["supplier_name"]; ?>
                             <td align="center">
-                                <a href="storeStockItems.php?stock_id=<?php echo $row['stock_id']; ?>">Edit</a>
+                                <a href="storeStockItems.php?stock_id=<?php echo $row['stock_id']; ?>">View</a>
                             </td>
 
                         </tr>

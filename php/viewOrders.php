@@ -24,7 +24,11 @@ else {
     <body>
         <div class="menu"> <?php include("nav_menu.php"); ?> </div>
         <div class="form">
-            <h1>  Orders </h1>
+            <?php if ($_SESSION['role'] == "S" || $_SESSION['role'] == "M") { ?>
+                        <h1>  Store Sales Order History </h1>
+            <?php } else { ?>
+                        <h1>  Customer Order History </h1>
+            <?php } ?>
             <table width="100%" border="1" style="border-collapse:collapse;">
                 <thead>
                     <tr>
