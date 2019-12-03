@@ -4,11 +4,11 @@ include("includes.php"); // Contain all necessary include files
 $orderid = intval($_GET['orderid']);
 $orderTotal=0;
 if ($_SESSION['role'] == "S" || $_SESSION['role'] == "M") {
-    $query="select orders.order_id ,medicine.medicine_name ,orders.order_date ,order_items.stock_id, order_items.unit_selling_price ,order_items.quantity ,order_items.total_amt FROM orders, medicine, order_items WHERE order_items.order_id=orders.order_id and medicine.medicine_id=order_items.medicine_id and orders.order_id= ".$orderid.";";
+    $query="select orders.order_id ,medicine.medicine_name ,orders.order_date ,order_items.stock_id, order_items.unit_selling_price ,order_items.quantity ,(order_items.total_amt*1.07) as total_amt FROM orders, medicine, order_items WHERE order_items.order_id=orders.order_id and medicine.medicine_id=order_items.medicine_id and orders.order_id= ".$orderid.";";
 }
 else {
-    $query="select orders.order_id ,medicine.medicine_name ,orders.order_date ,order_items.unit_selling_price ,order_items.quantity ,order_items.total_amt FROM orders, medicine, order_items WHERE order_items.order_id=orders.order_id and medicine.medicine_id=order_items.medicine_id and orders.order_id =".$orderid.";";
-}
+    $query="select orders.order_id ,medicine.medicine_name ,orders.order_date ,order_items.unit_selling_price ,order_items.quantity ,(order_items.total_amt*1.07) AS total_amt FROM orders, medicine, order_items WHERE order_items.order_id=orders.order_id and medicine.medicine_id=order_items.medicine_id and orders.order_id =".$orderid.";";
+    }
 
 ?>
 <!DOCTYPE html>
@@ -47,11 +47,10 @@ else {
     
                         <tbody>
                             <?php
-                                // Now execute the query
+                                // Now execute the query 
                                 $result = mysqli_query($con, $query);
-                                while($row = mysqli_fetch_assoc($result)) { 
-                            ?>
-
+                                while($row = mysqli_fetch_assoc($result)) {                 
+                            ?>  
                             <tr>
                                 <td align="center">
                                     <?php echo $row["order_id"];?> 
@@ -90,7 +89,8 @@ else {
                                    </td>                                
                                 <?php } ?>
                                 <td align="center">
-                                    <strong> <?php echo "$".number_format($orderTotal, 2, '.', ','); ?> </strong>  
+                                    <strong> <?php echo "$".number_format($orderTotal, 2, '.', ','); ?> </strong>
+                                    <!-- <?php echo "$".number_format($orderTotal, 2, '.', ','); ?> </strong>   -->
                                 </td>
                             </tr>
                         </tbody>
