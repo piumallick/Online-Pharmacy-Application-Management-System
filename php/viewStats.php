@@ -41,10 +41,8 @@ include("includes.php"); // Contain all necessary include files
 
     		<h2> 4. List of medicines whose availability is less (usually less than 7): <a href="LessAvailableMedicine.php">Click here for the report</a> </h2>
     		
-
-    		<h2> 5. Total Sales done by all salesperson in each store: <a href="Salespersonsales.php">Click here for the report </a> </h2>
     		
-            <h2> 6. Total Sales comparison in all the stores: <a href="SalesComparison.php">Click here for the report </a> </h2>
+            <h2> 5. Total Sales comparison in all the stores: <a href="SalesComparison.php">Click here for the report </a> </h2>
         
         </div>    
 
